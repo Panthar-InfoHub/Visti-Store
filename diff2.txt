@@ -1,0 +1,911 @@
+diff --git a/app/(store)/about/page.tsx b/app/(store)/about/page.tsx
+index c00c47d..b540877 100644
+--- a/app/(store)/about/page.tsx
++++ b/app/(store)/about/page.tsx
+@@ -1,5 +1,6 @@
+ import Image from "next/image";
+ import { generatePageMetadata } from "@/lib/metadata";
++import { siteConfig } from "@/site.config";
+ 
+ export const metadata = generatePageMetadata({
+   title: "About Us",
+@@ -14,10 +15,16 @@ export default function AboutPage() {
+       <section className="border-b">
+         <div className="container mx-auto px-6 py-16 md:py-24 max-w-5xl">
+           <div className="text-center space-y-5">
+-            <h1 className="text-3xl md:text-5xl lg:text-6xl font-semibold text-gray-900 tracking-tight">
++            <h1 
++              className="text-3xl md:text-5xl lg:text-6xl font-semibold tracking-tight"
++              style={{ color: siteConfig.colors.secondary }}
++            >
+               About JP Interio
+             </h1>
+-            <p className="text-base md:text-lg lg:text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
++            <p 
++              className="text-base md:text-lg lg:text-xl leading-relaxed max-w-3xl mx-auto"
++              style={{ color: siteConfig.colors.secondary }}
++            >
+               A design-driven interior solutions company dedicated to creating modern, functional, and aesthetically refined spaces. We specialize in residential, commercial, and luxury interior design services, offering innovative concepts, customized solutions, and complete turnkey execution for homes, offices, retail spaces, hotels, and businesses.
+             </p>
+           </div>
+@@ -40,29 +47,49 @@ export default function AboutPage() {
+                 />
+               </div>
+               <div className="mt-5 text-center">
+-                <p className="font-semibold text-lg md:text-xl text-gray-900">
++                <p 
++                  className="font-semibold text-lg md:text-xl"
++                  style={{ color: siteConfig.colors.secondary }}
++                >
+                   Pavneet Singh
+                 </p>
+-                <p className="text-gray-600 mt-1 text-sm md:text-base">Founder & CEO</p>
++                <p 
++                  className="mt-1 text-sm md:text-base"
++                  style={{ color: siteConfig.colors.secondary }}
++                >
++                  Founder & CEO
++                </p>
+               </div>
+             </div>
+ 
+             {/* Content */}
+             <div className="lg:col-span-3 space-y-6">
+               <div>
+-                <p className="text-xs md:text-sm font-semibold text-cyan-600 uppercase tracking-wider mb-3">
++                <p 
++                  className="text-xs md:text-sm font-semibold uppercase tracking-wider mb-3"
++                  style={{ color: siteConfig.colors.primary }}
++                >
+                   Founder's Vision
+                 </p>
+-                <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold text-gray-900 leading-tight mb-6">
++                <h2 
++                  className="text-xl md:text-2xl lg:text-3xl font-semibold leading-tight mb-6"
++                  style={{ color: siteConfig.colors.secondary }}
++                >
+                   Designing Timeless Spaces for Modern Living
+                 </h2>
+               </div>
+ 
+               <div className="space-y-4">
+-                <p className="text-gray-700 leading-relaxed text-sm md:text-base">
++                <p 
++                  className="leading-relaxed text-sm md:text-base"
++                  style={{ color: siteConfig.colors.secondary }}
++                >
+                   "At JP INTERIO, our vision is to transform spaces into experiences that inspire comfort, functionality, and elegance. We don’t just create interiors and furniture — we craft environments that reflect personality, lifestyle, and modern living with creativity and precision."
+                 </p>
+-                <p className="text-gray-700 leading-relaxed text-sm md:text-base">
++                <p 
++                  className="leading-relaxed text-sm md:text-base"
++                  style={{ color: siteConfig.colors.secondary }}
++                >
+                   "Our mission is to deliver innovative interior design solutions and premium furniture that combine aesthetics with practicality. Through thoughtful design, quality craftsmanship, and attention to detail, we are committed to creating spaces where ideas come to life and every corner tells a story."
+                 </p>
+               </div>
+@@ -76,18 +103,30 @@ export default function AboutPage() {
+         <div className="container mx-auto px-6 max-w-6xl">
+           <div className="grid md:grid-cols-2 gap-8 md:gap-12">
+             <div>
+-              <h3 className="text-xs md:text-sm font-semibold text-cyan-600 uppercase tracking-wider mb-3">
++              <h3 
++                className="text-xs md:text-sm font-semibold uppercase tracking-wider mb-3"
++                style={{ color: siteConfig.colors.primary }}
++              >
+                 Our Mission
+               </h3>
+-              <p className="text-lg md:text-xl lg:text-2xl font-medium text-gray-900 leading-relaxed">
++              <p 
++                className="text-lg md:text-xl lg:text-2xl font-medium leading-relaxed"
++                style={{ color: siteConfig.colors.secondary }}
++              >
+                 To create elegant, functional, and personalized interiors with premium furniture and timeless design solutions.
+               </p>
+             </div>
+             <div>
+-              <h3 className="text-xs md:text-sm font-semibold text-cyan-600 uppercase tracking-wider mb-3">
++              <h3 
++                className="text-xs md:text-sm font-semibold uppercase tracking-wider mb-3"
++                style={{ color: siteConfig.colors.primary }}
++              >
+                 Founded By
+               </h3>
+-              <p className="text-sm md:text-base text-gray-700 leading-relaxed">
++              <p 
++                className="text-sm md:text-base leading-relaxed"
++                style={{ color: siteConfig.colors.secondary }}
++              >
+                 Founded by Pavneet Singh, the company aims to redefine modern interiors through creativity, functionality, and timeless design. With a strong focus on quality craftsmanship and personalized solutions, we create elegant spaces and furniture that enhance everyday living while reflecting style, comfort, and sophistication.
+               </p>
+             </div>
+@@ -99,8 +138,16 @@ export default function AboutPage() {
+       <section className="py-16 md:py-24">
+         <div className="container mx-auto px-6 max-w-6xl">
+           <div className="mb-12">
+-            <h2 className="text-2xl md:text-3xl font-semibold text-gray-900 mb-3">What We Do</h2>
+-            <p className="text-base md:text-lg text-gray-600">
++            <h2 
++              className="text-2xl md:text-3xl font-semibold mb-3"
++              style={{ color: siteConfig.colors.secondary }}
++            >
++              What We Do
++            </h2>
++            <p 
++              className="text-base md:text-lg"
++              style={{ color: siteConfig.colors.secondary }}
++            >
+               Comprehensive interior and furniture solutions for modern living spaces
+             </p>
+           </div>
+@@ -114,8 +161,14 @@ export default function AboutPage() {
+               "Material Selection & Procurement",
+             ].map((item, index) => (
+               <div key={index} className="flex items-start gap-3 group">
+-                <div className="shrink-0 w-1.5 h-1.5 rounded-full bg-cyan-600 mt-2.5" />
+-                <p className="text-base md:text-lg text-gray-900 leading-relaxed group-hover:text-gray-600 transition-colors">
++                <div 
++                  className="shrink-0 w-1.5 h-1.5 rounded-full mt-2.5"
++                  style={{ backgroundColor: siteConfig.colors.primary }}
++                />
++                <p 
++                  className="text-base md:text-lg leading-relaxed transition-colors"
++                  style={{ color: siteConfig.colors.secondary }}
++                >
+                   {item}
+                 </p>
+               </div>
+@@ -128,7 +181,10 @@ export default function AboutPage() {
+       <section className="py-16 md:py-24 bg-gray-50">
+         <div className="container mx-auto px-6 max-w-6xl">
+           <div className="mb-12">
+-            <h2 className="text-2xl md:text-3xl font-semibold text-gray-900 mb-3">
++            <h2 
++              className="text-2xl md:text-3xl font-semibold mb-3"
++              style={{ color: siteConfig.colors.secondary }}
++            >
+               Why Choose JP Interio?
+             </h2>
+           </div>
+@@ -142,10 +198,18 @@ export default function AboutPage() {
+               "Post-project support and maintenance",
+             ].map((item, index) => (
+               <div key={index} className="group">
+-                <div className="w-9 h-9 rounded-full bg-cyan-600 text-white flex items-center justify-center mb-3 text-sm font-medium group-hover:bg-cyan-700 transition-colors">
++                <div 
++                  className="w-9 h-9 rounded-full text-white flex items-center justify-center mb-3 text-sm font-medium transition-colors"
++                  style={{ backgroundColor: siteConfig.colors.primary }}
++                >
+                   {index + 1}
+                 </div>
+-                <p className="text-base md:text-lg text-gray-900 leading-relaxed">{item}</p>
++                <p 
++                  className="text-base md:text-lg leading-relaxed"
++                  style={{ color: siteConfig.colors.secondary }}
++                >
++                  {item}
++                </p>
+               </div>
+             ))}
+           </div>
+@@ -155,7 +219,10 @@ export default function AboutPage() {
+       {/* Closing Statement */}
+       <section className="py-16 md:py-24 border-t">
+         <div className="container mx-auto px-6 max-w-4xl text-center">
+-          <p className="text-xl md:text-2xl font-medium text-gray-900 leading-relaxed">
++          <p 
++            className="text-xl md:text-2xl font-medium leading-relaxed"
++            style={{ color: siteConfig.colors.secondary }}
++          >
+             JP Interio is committed to shaping the next generation of living spaces through creativity,
+             functionality, and timeless design.
+           </p>
+diff --git a/app/(store)/account/layout.tsx b/app/(store)/account/layout.tsx
+index 01713a6..1af3795 100644
+--- a/app/(store)/account/layout.tsx
++++ b/app/(store)/account/layout.tsx
+@@ -3,16 +3,9 @@ import { AccountNav } from "@/components/store/account/account-nav";
+ 
+ export default function AccountLayout({ children }: { children: React.ReactNode }) {
+   return (
+-    <main className="min-h-screen py-4 sm:py-6 bg-gray-50">
+-      <div className="container mx-auto px-4 sm:px-6">
+-        <div className="mb-4 sm:mb-5 lg:mb-6">
+-          <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900">My Account</h1>
+-          <p className="text-gray-600 mt-1 text-xs sm:text-sm">
+-            Manage your profile, orders, and preferences
+-          </p>
+-        </div>
+-
+-        <div className="grid lg:grid-cols-[220px_1fr] gap-4 lg:gap-5">
++    <main className="min-h-screen py-8 sm:py-12 bg-[#F8F6F2]">
++      <div className="container max-w-6xl mx-auto px-4 sm:px-6">
++        <div className="grid lg:grid-cols-[220px_1fr] gap-4 lg:gap-10">
+           <AccountNav />
+           {/* Main Content */}
+           <div className="min-w-0">{children}</div>
+diff --git a/app/(store)/bulk-order/page.tsx b/app/(store)/bulk-order/page.tsx
+index c0a5b48..1c79371 100644
+--- a/app/(store)/bulk-order/page.tsx
++++ b/app/(store)/bulk-order/page.tsx
+@@ -94,11 +94,22 @@ ${formData.additionalRequirements || "None"}`;
+             <div className="container mx-auto px-4 py-12 max-w-4xl">
+                 {/* Header */}
+                 <div className="text-center mb-12">
+-                    <div className="inline-flex items-center justify-center w-16 h-16 bg-gray-900 rounded-full mb-4">
++                    <div 
++                      className="inline-flex items-center justify-center w-16 h-16 rounded-full mb-4"
++                      style={{ backgroundColor: siteConfig.colors.primary }}
++                    >
+                         <Package className="w-8 h-8 text-white" />
+                     </div>
+-                    <h1 className="text-4xl font-bold text-gray-900 mb-4">Bulk Order Request</h1>
+-                    <p className="text-lg text-gray-600 max-w-2xl mx-auto">
++                    <h1 
++                      className="text-4xl font-bold mb-4"
++                      style={{ color: siteConfig.colors.secondary }}
++                    >
++                      Bulk Order Request
++                    </h1>
++                    <p 
++                      className="text-lg max-w-2xl mx-auto font-light"
++                      style={{ color: siteConfig.colors.secondary }}
++                    >
+                         Need to order in bulk? Fill out the form below and we'll get back to you with a custom quote
+                         tailored to your requirements.
+                     </p>
+@@ -107,8 +118,15 @@ ${formData.additionalRequirements || "None"}`;
+                 {/* Form Card */}
+                 <Card className="shadow-xl border-gray-200">
+                     <CardHeader className="border-b bg-gray-50">
+-                        <CardTitle className="text-2xl">Order Information</CardTitle>
+-                        <CardDescription>
++                        <CardTitle 
++                          className="text-2xl"
++                          style={{ color: siteConfig.colors.secondary }}
++                        >
++                          Order Information
++                        </CardTitle>
++                        <CardDescription
++                          style={{ color: siteConfig.colors.primary }}
++                        >
+                             Please provide detailed information about your bulk order requirements
+                         </CardDescription>
+                     </CardHeader>
+@@ -116,13 +134,16 @@ ${formData.additionalRequirements || "None"}`;
+                         <form onSubmit={handleSubmit} className="space-y-6">
+                             {/* Contact Information */}
+                             <div className="space-y-4">
+-                                <h3 className="text-lg font-semibold text-gray-900 border-b pb-2">
++                                <h3 
++                                  className="text-lg font-semibold border-b pb-2"
++                                  style={{ color: siteConfig.colors.secondary }}
++                                >
+                                     Contact Information
+                                 </h3>
+ 
+                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                     <div className="space-y-2">
+-                                        <Label htmlFor="name" className="text-sm font-medium">
++                                        <Label htmlFor="name" className="text-sm font-medium" style={{ color: siteConfig.colors.primary }}>
+                                             Full Name <span className="text-red-500">*</span>
+                                         </Label>
+                                         <Input
+@@ -137,7 +158,7 @@ ${formData.additionalRequirements || "None"}`;
+                                     </div>
+ 
+                                     <div className="space-y-2">
+-                                        <Label htmlFor="phone" className="text-sm font-medium">
++                                        <Label htmlFor="phone" className="text-sm font-medium" style={{ color: siteConfig.colors.primary }}>
+                                             Phone Number <span className="text-red-500">*</span>
+                                         </Label>
+                                         <Input
+@@ -155,7 +176,7 @@ ${formData.additionalRequirements || "None"}`;
+ 
+                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                     <div className="space-y-2">
+-                                        <Label htmlFor="email" className="text-sm font-medium">
++                                        <Label htmlFor="email" className="text-sm font-medium" style={{ color: siteConfig.colors.primary }}>
+                                             Email Address
+                                         </Label>
+                                         <Input
+@@ -170,7 +191,7 @@ ${formData.additionalRequirements || "None"}`;
+                                     </div>
+ 
+                                     <div className="space-y-2">
+-                                        <Label htmlFor="organization" className="text-sm font-medium">
++                                        <Label htmlFor="organization" className="text-sm font-medium" style={{ color: siteConfig.colors.primary }}>
+                                             Organization/Company
+                                         </Label>
+                                         <Input
+@@ -187,12 +208,15 @@ ${formData.additionalRequirements || "None"}`;
+ 
+                             {/* Order Details */}
+                             <div className="space-y-4">
+-                                <h3 className="text-lg font-semibold text-gray-900 border-b pb-2">
++                                <h3 
++                                  className="text-lg font-semibold border-b pb-2"
++                                  style={{ color: siteConfig.colors.secondary }}
++                                >
+                                     Order Details
+                                 </h3>
+ 
+                                 <div className="space-y-2">
+-                                    <Label htmlFor="productDetails" className="text-sm font-medium">
++                                    <Label htmlFor="productDetails" className="text-sm font-medium" style={{ color: siteConfig.colors.primary }}>
+                                         Product Details <span className="text-red-500">*</span>
+                                     </Label>
+                                     <Textarea
+@@ -209,7 +233,7 @@ ${formData.additionalRequirements || "None"}`;
+ 
+                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                     <div className="space-y-2">
+-                                        <Label htmlFor="quantity" className="text-sm font-medium">
++                                        <Label htmlFor="quantity" className="text-sm font-medium" style={{ color: siteConfig.colors.primary }}>
+                                             Estimated Quantity <span className="text-red-500">*</span>
+                                         </Label>
+                                         <Input
+@@ -224,7 +248,7 @@ ${formData.additionalRequirements || "None"}`;
+                                     </div>
+ 
+                                     <div className="space-y-2">
+-                                        <Label htmlFor="deliveryLocation" className="text-sm font-medium">
++                                        <Label htmlFor="deliveryLocation" className="text-sm font-medium" style={{ color: siteConfig.colors.primary }}>
+                                             Delivery Location
+                                         </Label>
+                                         <Input
+@@ -239,7 +263,7 @@ ${formData.additionalRequirements || "None"}`;
+                                 </div>
+ 
+                                 <div className="space-y-2">
+-                                    <Label htmlFor="additionalRequirements" className="text-sm font-medium">
++                                    <Label htmlFor="additionalRequirements" className="text-sm font-medium" style={{ color: siteConfig.colors.primary }}>
+                                         Additional Requirements
+                                     </Label>
+                                     <Textarea
+@@ -259,7 +283,8 @@ ${formData.additionalRequirements || "None"}`;
+                                 <Button
+                                     type="submit"
+                                     disabled={isSubmitting}
+-                                    className="w-full h-12 text-base font-semibold bg-gray-900 hover:bg-black transition-all disabled:opacity-50"
++                                    className="w-full h-12 text-base font-semibold text-white transition-all disabled:opacity-50 hover:opacity-90 rounded-md"
++                                    style={{ backgroundColor: siteConfig.colors.secondary }}
+                                 >
+                                     {isSubmitting ? (
+                                         <>
+@@ -273,7 +298,10 @@ ${formData.additionalRequirements || "None"}`;
+                                         </>
+                                     )}
+                                 </Button>
+-                                <p className="text-xs text-gray-500 text-center mt-3">
++                                <p 
++                                  className="text-xs text-center mt-3 font-light"
++                                  style={{ color: siteConfig.colors.primary }}
++                                >
+                                     By submitting this form, you'll be redirected to WhatsApp to complete your request
+                                 </p>
+                             </div>
+@@ -287,24 +315,54 @@ ${formData.additionalRequirements || "None"}`;
+                         <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                             <span className="text-2xl">💬</span>
+                         </div>
+-                        <h4 className="font-semibold text-gray-900 mb-2">Quick Response</h4>
+-                        <p className="text-sm text-gray-600">Get instant confirmation via WhatsApp</p>
++                        <h4 
++                          className="font-semibold mb-2"
++                          style={{ color: siteConfig.colors.secondary }}
++                        >
++                          Quick Response
++                        </h4>
++                        <p 
++                          className="text-sm font-light"
++                          style={{ color: siteConfig.colors.primary }}
++                        >
++                          Get instant confirmation via WhatsApp
++                        </p>
+                     </div>
+ 
+                     <div className="text-center p-6 bg-white rounded-lg border border-gray-200">
+                         <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                             <span className="text-2xl">💰</span>
+                         </div>
+-                        <h4 className="font-semibold text-gray-900 mb-2">Best Pricing</h4>
+-                        <p className="text-sm text-gray-600">Competitive rates for bulk orders</p>
++                        <h4 
++                          className="font-semibold mb-2"
++                          style={{ color: siteConfig.colors.secondary }}
++                        >
++                          Best Pricing
++                        </h4>
++                        <p 
++                          className="text-sm font-light"
++                          style={{ color: siteConfig.colors.primary }}
++                        >
++                          Competitive rates for bulk orders
++                        </p>
+                     </div>
+ 
+                     <div className="text-center p-6 bg-white rounded-lg border border-gray-200">
+                         <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-3">
+                             <span className="text-2xl">🚚</span>
+                         </div>
+-                        <h4 className="font-semibold text-gray-900 mb-2">Fast Delivery</h4>
+-                        <p className="text-sm text-gray-600">Timely delivery across India</p>
++                        <h4 
++                          className="font-semibold mb-2"
++                          style={{ color: siteConfig.colors.secondary }}
++                        >
++                          Fast Delivery
++                        </h4>
++                        <p 
++                          className="text-sm font-light"
++                          style={{ color: siteConfig.colors.primary }}
++                        >
++                          Timely delivery across India
++                        </p>
+                     </div>
+                 </div>
+             </div>
+diff --git a/app/(store)/checkout/page.tsx b/app/(store)/checkout/page.tsx
+index 43572a5..0b85c01 100644
+--- a/app/(store)/checkout/page.tsx
++++ b/app/(store)/checkout/page.tsx
+@@ -62,8 +62,8 @@ export default async function CheckoutPage() {
+       })) || [];
+ 
+   return (
+-    <div className="min-h-screen py-8 bg-gray-50">
+-      <div className="container mx-auto">
++    <div className="min-h-screen py-8 lg:py-12 bg-[#F8F6F2]">
++      <div className="container max-w-6xl mx-auto px-4 md:px-6">
+         <Suspense fallback={<CheckoutSkeleton />}>
+           <CheckoutClient
+             userEmail={session.user.email}
+diff --git a/app/(store)/contact/page.tsx b/app/(store)/contact/page.tsx
+index 65ce097..d7851b0 100644
+--- a/app/(store)/contact/page.tsx
++++ b/app/(store)/contact/page.tsx
+@@ -16,10 +16,16 @@ export default function ContactPage() {
+       <section className="border-b">
+         <div className="container mx-auto px-6 py-16 md:py-24 max-w-5xl">
+           <div className="text-center space-y-5">
+-            <h1 className="text-3xl md:text-5xl lg:text-6xl font-semibold text-gray-900 tracking-tight">
++            <h1 
++              className="text-3xl md:text-5xl lg:text-6xl font-semibold tracking-tight"
++              style={{ color: siteConfig.colors.secondary }}
++            >
+               Contact Us
+             </h1>
+-            <p className="text-base md:text-lg lg:text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
++            <p 
++              className="text-base md:text-lg lg:text-xl leading-relaxed max-w-3xl mx-auto"
++              style={{ color: siteConfig.colors.secondary }}
++            >
+               We're here to help you with Furniture, Interior Design, and other related solutions. Reach out to us
+               anytime.
+             </p>
+@@ -34,10 +40,16 @@ export default function ContactPage() {
+             {/* Contact Information */}
+             <div className="lg:col-span-2 space-y-10">
+               <div>
+-                <h2 className="text-2xl md:text-3xl font-semibold text-gray-900 mb-3">
++                <h2 
++                  className="text-2xl md:text-3xl font-semibold mb-3"
++                  style={{ color: siteConfig.colors.secondary }}
++                >
+                   Get in touch
+                 </h2>
+-                <p className="text-base text-gray-600 leading-relaxed">
++                <p 
++                  className="text-base leading-relaxed"
++                  style={{ color: siteConfig.colors.secondary }}
++                >
+                   Fill out the form and our team will get back to you within 24 hours.
+                 </p>
+               </div>
+@@ -45,16 +57,24 @@ export default function ContactPage() {
+               <div className="space-y-8">
+                 {/* Phone */}
+                 <div>
+-                  <h3 className="text-sm font-medium text-gray-500 uppercase tracking-wider mb-3">
++                  <h3 
++                    className="text-sm font-medium uppercase tracking-wider mb-3"
++                    style={{ color: siteConfig.colors.primary }}
++                  >
+                     Phone
+                   </h3>
+-                  <div className="space-y-2 text-gray-900">
+-                    <a href={`tel:${siteConfig.contact.phone}`} className="text-base block">
++                  <div className="space-y-2">
++                    <a 
++                      href={`tel:${siteConfig.contact.phone}`} 
++                      className="text-base block"
++                      style={{ color: siteConfig.colors.secondary }}
++                    >
+                       {siteConfig.contact.phone}
+                     </a>
+                     <a
+                       href={`tel:${siteConfig.contact.alternatePhone}`}
+                       className="text-base block"
++                      style={{ color: siteConfig.colors.secondary }}
+                     >
+                       {siteConfig.contact.alternatePhone}
+                     </a>
+@@ -63,21 +83,30 @@ export default function ContactPage() {
+ 
+                 {/* Email */}
+                 <div>
+-                  <h3 className="text-sm font-medium text-gray-500 uppercase tracking-wider mb-3">
++                  <h3 
++                    className="text-sm font-medium uppercase tracking-wider mb-3"
++                    style={{ color: siteConfig.colors.primary }}
++                  >
+                     Email
+                   </h3>
+-                  <div className="space-y-2 text-gray-900">
+-                    <p className="text-base">sales@jpinterio.com</p>
+-                    <p className="text-base">Kjenterprise@gmail.com</p>
++                  <div className="space-y-2">
++                    <p className="text-base" style={{ color: siteConfig.colors.secondary }}>sales@jpinterio.com</p>
++                    <p className="text-base" style={{ color: siteConfig.colors.secondary }}>Kjenterprise@gmail.com</p>
+                   </div>
+                 </div>
+ 
+                 {/* Address */}
+                 <div>
+-                  <h3 className="text-sm font-medium text-gray-500 uppercase tracking-wider mb-3">
++                  <h3 
++                    className="text-sm font-medium uppercase tracking-wider mb-3"
++                    style={{ color: siteConfig.colors.primary }}
++                  >
+                     Visit Us
+                   </h3>
+-                  <p className="text-base text-gray-900 leading-relaxed">
++                  <p 
++                    className="text-base leading-relaxed"
++                    style={{ color: siteConfig.colors.secondary }}
++                  >
+                     JP Interio
+                     <br />
+                     Near JMK Showroom, Avas Vikas Phase 2, Jhansi, Uttar Pradesh 284003
+@@ -86,12 +115,15 @@ export default function ContactPage() {
+ 
+                 {/* Business Hours */}
+                 <div>
+-                  <h3 className="text-sm font-medium text-gray-500 uppercase tracking-wider mb-3">
++                  <h3 
++                    className="text-sm font-medium uppercase tracking-wider mb-3"
++                    style={{ color: siteConfig.colors.primary }}
++                  >
+                     Business Hours
+                   </h3>
+-                  <div className="space-y-1 text-base text-gray-900">
+-                    <p>Monday – Saturday: 9:00 AM - 7:00 PM</p>
+-                    <p className="text-gray-600">Sunday: Closed</p>
++                  <div className="space-y-1 text-base">
++                    <p style={{ color: siteConfig.colors.secondary }}>Monday – Saturday: 9:00 AM - 7:00 PM</p>
++                    <p style={{ color: siteConfig.colors.secondary }}>Sunday: Closed</p>
+                   </div>
+                 </div>
+               </div>
+@@ -100,10 +132,18 @@ export default function ContactPage() {
+             {/* Contact Form */}
+             <div className="lg:col-span-3">
+               <div className="mb-8">
+-                <h3 className="text-xl md:text-2xl font-semibold text-gray-900 mb-2">
++                <h3 
++                  className="text-xl md:text-2xl font-semibold mb-2"
++                  style={{ color: siteConfig.colors.secondary }}
++                >
+                   Send us a message
+                 </h3>
+-                <p className="text-base text-gray-600">We'll receive your message via WhatsApp.</p>
++                <p 
++                  className="text-base"
++                  style={{ color: siteConfig.colors.secondary }}
++                >
++                  We'll receive your message via WhatsApp.
++                </p>
+               </div>
+               <ContactForm />
+             </div>
+@@ -115,10 +155,18 @@ export default function ContactPage() {
+       <section className="py-16 md:py-24 bg-gray-50">
+         <div className="container mx-auto px-6 max-w-6xl">
+           <div className="text-center mb-8">
+-            <h2 className="text-2xl md:text-3xl font-semibold text-gray-900 mb-3">
++            <h2 
++              className="text-2xl md:text-3xl font-semibold mb-3"
++              style={{ color: siteConfig.colors.secondary }}
++            >
+               Visit Our Location
+             </h2>
+-            <p className="text-base text-gray-600">Find us at Jhansi, Uttar Pradesh</p>
++            <p 
++              className="text-base"
++              style={{ color: siteConfig.colors.secondary }}
++            >
++              Find us at Jhansi, Uttar Pradesh
++            </p>
+           </div>
+           <div className="rounded-xl overflow-hidden shadow-lg border border-gray-200">
+             <iframe
+diff --git a/app/(store)/products/page.tsx b/app/(store)/products/page.tsx
+index d25134c..9f506f6 100644
+--- a/app/(store)/products/page.tsx
++++ b/app/(store)/products/page.tsx
+@@ -9,6 +9,7 @@ import { Suspense } from "react";
+ import { ProductCardSkeleton } from "@/components/store/products/product-list-skeleton";
+ import { Skeleton } from "@/components/ui/skeleton";
+ import { FeaturedProducts } from "@/components/store/home/featured-products";
++import { siteConfig } from "@/site.config";
+ 
+ export const experimental_ppr = true;
+ 
+@@ -298,9 +299,17 @@ export default async function ProductsPage({
+         </nav>
+         <div className="flex items-center justify-between">
+           <div>
+-            <h1 className="text-2xl font-bold text-gray-900">All Products</h1>
+-            <p className="text-sm text-gray-600 mt-1">
+-              Browse our complete collection of electronics, robotics, and DIY components
++            <h1 
++              className="text-2xl font-bold"
++              style={{ color: siteConfig.colors.primary }}
++            >
++              All Products
++            </h1>
++            <p 
++              className="text-sm mt-1"
++              style={{ color: siteConfig.colors.secondary }}
++            >
++              Browse our complete collection Luxary furniture
+             </p>
+           </div>
+         </div>
+diff --git a/components/store/home/featured-categories-nav.tsx b/components/store/home/featured-categories-nav.tsx
+index 4db4856..c1fdba9 100644
+--- a/components/store/home/featured-categories-nav.tsx
++++ b/components/store/home/featured-categories-nav.tsx
+@@ -1,5 +1,6 @@
+ import Link from "next/link";
+ import { prisma } from "@/prisma/db";
++import { siteConfig } from "@/site.config";
+ 
+ export async function FeaturedCategoriesNav() {
+   const categories = await prisma.category.findMany({
+@@ -21,13 +22,14 @@ export async function FeaturedCategoriesNav() {
+   if (categories.length === 0) return null;
+ 
+   return (
+-    <div className="w-full bg-white border-b border-gray-50">
++    <div className="hidden md:block w-full bg-white border-b border-gray-50">
+       <div className="container mx-auto px-4 py-4 flex items-center justify-center gap-8 md:gap-24 overflow-x-auto whitespace-nowrap no-scrollbar">
+         {categories.map((category) => (
+           <Link
+             key={category.id}
+             href={`/categories/${category.slug}`}
+-            className="text-xs md:text-sm font-medium tracking-wide text-gray-500 hover:text-black transition-colors duration-200"
++            className="text-xs md:text-sm font-medium tracking-wide transition-colors duration-200 hover:opacity-80"
++            style={{ color: siteConfig.colors.secondary }}
+           >
+             {category.name}
+           </Link>
+diff --git a/components/store/home/featured-products.tsx b/components/store/home/featured-products.tsx
+index 1d75bc6..cd2f264 100644
+--- a/components/store/home/featured-products.tsx
++++ b/components/store/home/featured-products.tsx
+@@ -1,5 +1,6 @@
+ import { prisma } from "@/prisma/db";
+ import { ProductCarousel } from "@/components/store/home/product-carousel";
++import { siteConfig } from "@/site.config";
+ 
+ interface FeaturedProductsProps {
+   title: string;
+@@ -65,14 +66,23 @@ export async function FeaturedProducts({ title, filter }: FeaturedProductsProps)
+         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+           <div>
+             {!isBestseller && (
+-              <p className="text-sm font-semibold text-cyan-600 uppercase tracking-wider mb-3">
++              <p 
++                className="text-sm font-semibold uppercase tracking-wider mb-3"
++                style={{ color: siteConfig.colors.primary }}
++              >
+                 {filter === "new" ? "New Arrivals" : "Featured"}
+               </p>
+             )}
+-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3 tracking-tight">
++            <h2 
++              className="text-3xl md:text-4xl font-bold mb-3 tracking-tight"
++              style={{ color: siteConfig.colors.secondary }}
++            >
+               {isBestseller ? "Top Picks for Home Decor" : title}
+             </h2>
+-            <p className="text-sm md:text-base text-gray-600 font-medium">
++            <p 
++              className="text-sm md:text-base font-medium"
++              style={{ color: siteConfig.colors.secondary }}
++            >
+               {isBestseller
+                 ? "This week's handpicked items from our interior collection."
+                 : "Discover our most popular products"}
+@@ -81,7 +91,8 @@ export async function FeaturedProducts({ title, filter }: FeaturedProductsProps)
+           {isBestseller && (
+             <a
+               href="/products"
+-              className="text-[#c48b6c] hover:text-[#b07a5c] font-semibold text-sm flex items-center gap-1.5 transition-colors shrink-0 md:mb-1"
++              className="font-semibold text-sm flex items-center gap-1.5 transition-all hover:opacity-80 shrink-0 md:mb-1"
++              style={{ color: siteConfig.colors.primary }}
+             >
+               View All Products
+               <span className="text-base font-normal">→</span>
+diff --git a/components/store/home/interior-experience-section.tsx b/components/store/home/interior-experience-section.tsx
+index 8962629..28eafae 100644
+--- a/components/store/home/interior-experience-section.tsx
++++ b/components/store/home/interior-experience-section.tsx
+@@ -2,6 +2,7 @@ import Image from "next/image";
+ import Link from "next/link";
+ import { ArrowRight } from "lucide-react";
+ import { prisma } from "@/prisma/db";
++import { siteConfig } from "@/site.config";
+ 
+ export async function InteriorExperienceSection() {
+   // Fetch top 4 active categories with the most active products
+@@ -36,13 +37,22 @@ export async function InteriorExperienceSection() {
+           
+           {/* Left Editorial Content (approx 5 cols out of 12) */}
+           <div className="lg:col-span-5 flex flex-col justify-center">
+-            <span className="text-[#8c8c8c] font-bold text-xs tracking-[0.2em] uppercase mb-4 block">
++            <span 
++              className="font-bold text-xs tracking-[0.2em] uppercase mb-4 block"
++              style={{ color: siteConfig.colors.primary }}
++            >
+               Editorial
+             </span>
+-            <h2 className="text-3xl md:text-4xl lg:text-[40px] font-medium text-[#2d2d2d] leading-[1.2] tracking-tight mb-6">
++            <h2 
++              className="text-3xl md:text-4xl lg:text-[40px] font-medium leading-[1.2] tracking-tight mb-6"
++              style={{ color: siteConfig.colors.secondary }}
++            >
+               The Interior Experience
+             </h2>
+-            <p className="text-gray-500 text-sm md:text-base leading-relaxed mb-10 font-normal max-w-md">
++            <p 
++              className="text-sm md:text-base leading-relaxed mb-10 font-normal max-w-md"
++              style={{ color: siteConfig.colors.secondary }}
++            >
+               A space not just for meals, but for conversation and connection. Our
+               dining collection focuses on honest materials and timeless silhouettes
+               that ground the room.
+@@ -56,7 +66,10 @@ export async function InteriorExperienceSection() {
+                   href={`/categories/${category.slug}`}
+                   className="flex items-center justify-between py-5 border-b border-gray-200 group hover:opacity-80 transition-opacity"
+                 >
+-                  <span className="text-[#2d2d2d] text-base md:text-[17px] font-medium tracking-wide">
++                  <span 
++                    className="text-base md:text-[17px] font-medium tracking-wide"
++                    style={{ color: siteConfig.colors.secondary }}
++                  >
+                     {category.name}
+                   </span>
+                   <ArrowRight className="w-5 h-5 text-gray-400 group-hover:translate-x-1 transition-transform duration-200" />
+@@ -68,7 +81,8 @@ export async function InteriorExperienceSection() {
+             <div className="mt-8">
+               <Link
+                 href="/products"
+-                className="inline-block border border-[#2d2d2d] bg-transparent text-[#2d2d2d] hover:bg-[#2d2d2d] hover:text-white px-8 py-3.5 text-[11px] tracking-[0.2em] uppercase font-bold transition-all duration-300 rounded-none"
++                className="inline-block text-white border px-8 py-3.5 text-[11px] tracking-[0.2em] uppercase font-bold transition-all duration-300 rounded-none hover:opacity-90"
++                style={{ backgroundColor: siteConfig.colors.primary, borderColor: siteConfig.colors.primary }}
+               >
+                 Shop Experience
+               </Link>
+diff --git a/components/store/home/shop-category-cards.tsx b/components/store/home/shop-category-cards.tsx
+index fbb4c4b..8ae6ea1 100644
+--- a/components/store/home/shop-category-cards.tsx
++++ b/components/store/home/shop-category-cards.tsx
+@@ -2,6 +2,7 @@ import Image from "next/image";
+ import Link from "next/link";
+ import { prisma } from "@/prisma/db";
+ import { formatPrice } from "@/utils/format";
++import { siteConfig } from "@/site.config";
+ 
+ // Vibrant gradient backgrounds for categories without images
+ const gradients = [
+@@ -90,13 +91,30 @@ export async function ShopCategoryCards() {
+   return (
+     <section className="py-12 md:py-16 bg-white">
+       <div className="container mx-auto px-6">
+-        <div className="mb-12">
+-          <p className="text-sm font-semibold text-cyan-600 uppercase tracking-wider mb-3">
+-            Curated Collections
+-          </p>
+-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Key Elements for a Mindful Living Space</h2>
+-          {/* <p className="text-base md:text-lg text-gray-600">Explore our wide range of categories</p> */}
+-        </div>
++        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-12">
++          <div>
++            <p 
++              className="text-sm font-semibold uppercase tracking-wider mb-3"
++              style={{ color: siteConfig.colors.primary }}
++            >
++              Curated Collections
++            </p>
++            <h2 
++              className="text-3xl md:text-4xl font-bold"
++              style={{ color: siteConfig.colors.secondary }}
++            >
++              Key Elements for a Mindful Living Space
++            </h2>
++          </div>
++          <Link
++            href="/categories"
++            className="flex items-center gap-1.5 text-sm font-semibold hover:opacity-80 transition-opacity whitespace-nowrap md:mb-1"
++            style={{ color: siteConfig.colors.primary }}
++          >
++            <span>View All Category</span>
++            <span className="text-base">→</span>
++          </Link>
++          </div>
+ 
+         {/* Bento Grid Layout */}
+         <div className="grid grid-cols-2 md:grid-cols-6 lg:grid-cols-4 gap-4 md:gap-6">
+diff --git a/components/store/home/visualize-section.tsx b/components/store/home/visualize-section.tsx
+index 3368b41..197feed 100644
+--- a/components/store/home/visualize-section.tsx
++++ b/components/store/home/visualize-section.tsx
+@@ -5,6 +5,7 @@ import Image from "next/image";
+ import Link from "next/link";
+ import { Camera, ChevronsLeftRight } from "lucide-react";
+ import { Button } from "@/components/ui/button";
++import { siteConfig } from "@/site.config";
+ 
+ export function VisualizeSection() {
+   const [sliderPosition, setSliderPosition] = useState(50);
+@@ -25,13 +26,22 @@ export function VisualizeSection() {
+           
+           {/* Left Content */}
+           <div className="max-w-xl">
+-            <p className="text-[#8c8c8c] font-bold text-xs tracking-[0.15em] uppercase mb-4">
++            <p 
++              className="font-bold text-xs tracking-[0.15em] uppercase mb-4"
++              style={{ color: siteConfig.colors.primary }}
++            >
+               AI Interior Designer
+             </p>
+-            <h2 className="text-4xl md:text-5xl lg:text-[52px] font-medium text-[#2d2d2d] mb-6 leading-[1.15] tracking-tight">
++            <h2 
++              className="text-4xl md:text-5xl lg:text-[52px] font-medium mb-6 leading-[1.15] tracking-tight"
++              style={{ color: siteConfig.colors.secondary }}
++            >
+               Visualize in Your Space
+             </h2>
+-            <p className="text-gray-600 text-lg md:text-xl mb-10 leading-relaxed font-light">
++            <p 
++              className="text-lg md:text-xl mb-10 leading-relaxed font-light"
++              style={{ color: siteConfig.colors.secondary }}
++            >
+               Experience the future of interior design. Upload a photo of your room
+               and see instantly how Aura's curated pieces transform your home with
+               quiet luxury and timeless elegance.
+@@ -41,7 +51,8 @@ export function VisualizeSection() {
+               <Button 
+                 asChild 
+                 size="lg" 
+-                className="bg-[#c49a7c] hover:bg-[#b08769] text-white px-8 h-12 text-xs tracking-widest uppercase font-semibold rounded-none"
++                className="text-white px-8 h-12 text-xs tracking-widest uppercase font-semibold rounded-none hover:opacity-90"
++                style={{ backgroundColor: siteConfig.colors.primary }}
+               >
+                 <Link href="https://spzaora.com" target="_blank" rel="noopener noreferrer">
+                   <Camera className="mr-2 h-4 w-4" />
+@@ -54,9 +65,9 @@ export function VisualizeSection() {
+                 size="lg"
+                 className="border-[#d4d4d4] text-[#6b6b6b] hover:bg-white hover:text-black px-8 h-12 text-xs tracking-widest uppercase font-semibold rounded-none bg-transparent"
+               >
+-                <Link href="#">
++                {/* <Link href="#">
+                   Learn More
+-                </Link>
++                </Link> */}
+               </Button>
+             </div>
+           </div>

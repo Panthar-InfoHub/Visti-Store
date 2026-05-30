@@ -1,0 +1,14 @@
+name: Daily Supabase Wake
+
+on:
+  schedule:
+    - cron: "0 0 * * *" # once per day (UTC)
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping keep-alive endpoint
+        run: |
+          curl -s https://vyomtics.com/api/keep-alive > /dev/null
