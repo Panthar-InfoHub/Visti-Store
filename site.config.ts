@@ -1,14 +1,14 @@
 export const siteConfig = {
   // Basic Site Information
-  title: "Visti",
-  name: "Visti",
+  title: "Vishti Store",
+  name: "Vishti Store",
   description:
     "Explore Lumina Gems, where elegance blends with ethical sourcing to craft stunning, sustainable jewellery pieces.",
-  domain: "https://vististore.com",
+  domain: "https://visti-store.vercel.app/",
   // Logo
   logo: {
     path: "/image/visti-logo.png",
-    alt: "Visti Store Logo",
+    alt: "Vishti Store Logo",
   },
 
   // Contact Information
@@ -32,7 +32,7 @@ export const siteConfig = {
 
   // Admin Panel
   admin: {
-    title: "JP Interio",
+    title: "Vishti Store",
     subtitle: "Admin Panel",
   },
 

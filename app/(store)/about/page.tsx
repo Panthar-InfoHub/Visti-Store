@@ -5,7 +5,7 @@ import { siteConfig } from "@/site.config";
 export const metadata = generatePageMetadata({
   title: "About Us",
   description:
-    "JP Interio is a technology-driven organization dedicated to advancing interior design and furniture solutions across India.",
+    "A luxury jewelry destination committed to creating exquisite pieces that reflect sophistication, beauty, and enduring value.",
 });
 
 export default function AboutPage() {
@@ -19,7 +19,7 @@ export default function AboutPage() {
               className="text-3xl md:text-5xl lg:text-6xl font-semibold tracking-tight"
               style={{ color: siteConfig.colors.secondary }}
             >
-              About Visti
+              About Vishti
             </h1>
             <p 
               className="text-base md:text-lg lg:text-xl leading-relaxed max-w-3xl mx-auto"
@@ -84,7 +84,7 @@ export default function AboutPage() {
                   className="leading-relaxed text-sm md:text-base"
                   style={{ color: siteConfig.colors.secondary }}
                 >
-                  At Visti, our vision is to redefine luxury jewelry by creating exquisite pieces that celebrate beauty, heritage, and individuality. We believe jewelry is more than an accessory—it is a reflection of personal stories, cherished memories, and timeless elegance.
+                  At Vishti, our vision is to redefine luxury jewelry by creating exquisite pieces that celebrate beauty, heritage, and individuality. We believe jewelry is more than an accessory—it is a reflection of personal stories, cherished memories, and timeless elegance.
                 </p>
                 <p 
                   className="leading-relaxed text-sm md:text-base"
@@ -177,7 +177,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Why JP Interio - Minimal Grid */}
+      {/* Why Vishti Store - Minimal Grid */}
       <section className="py-16 md:py-24 bg-gray-50">
         <div className="container mx-auto px-6 max-w-6xl">
           <div className="mb-12">
@@ -185,7 +185,7 @@ export default function AboutPage() {
               className="text-2xl md:text-3xl font-semibold mb-3"
               style={{ color: siteConfig.colors.secondary }}
             >
-              Why Choose Visti?
+              Why Choose Vishti?
             </h2>
           </div>
 
@@ -223,7 +223,7 @@ export default function AboutPage() {
             className="text-xl md:text-2xl font-medium leading-relaxed"
             style={{ color: siteConfig.colors.secondary }}
           >
-            Visti is dedicated to creating exquisite jewelry that embodies sophistication, artistry, and timeless elegance for generations to cherish.
+            Vishti is dedicated to creating exquisite jewelry that embodies sophistication, artistry, and timeless elegance for generations to cherish.
           </p>
         </div>
       </section>

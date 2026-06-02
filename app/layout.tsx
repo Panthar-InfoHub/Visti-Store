@@ -31,8 +31,8 @@ export const metadata = {
     "Raspberry Pi",
     "DIY Kits",
   ],
-  authors: [{ name: "JP Interio" }],
-  creator: "JP Interio",
+  authors: [{ name: "Vishti Store" }],
+  creator: "Vishti Store",
   robots: {
     index: true,
     follow: true,

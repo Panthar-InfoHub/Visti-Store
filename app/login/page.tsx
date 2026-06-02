@@ -42,7 +42,7 @@ export default function LoginPage() {
       {/* Background Image Container */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/image/login-bg.png"
+          src="/visti-image/background-login.png"
           alt="Login Background"
           fill
           priority
@@ -57,10 +57,10 @@ export default function LoginPage() {
           {/* Brand Identity */}
           <div className="space-y-2">
             <h1 className="text-3xl font-bold text-[#2d2d2d] tracking-tight">
-              JP Interio
+              Vishti Store
             </h1>
             <p className="text-xs sm:text-sm text-gray-500 font-light max-w-xs mx-auto">
-              Elegant comfort for your home essentials.
+              Exquisite Jewelry for Every Moment
             </p>
           </div>
 

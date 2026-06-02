@@ -95,7 +95,7 @@ Invoice Number: ${orderDetails.invoiceNumber}
 Invoice Date: ${orderDetails.invoiceDate}
 
 Sold By:
-${orderDetails.businessName || "JP Interio"}
+${orderDetails.businessName || "Vishti Store"}
 ${orderDetails.businessAddress || ""}
 ${orderDetails.businessGstin ? `GSTIN: ${orderDetails.businessGstin}` : ""}
 
@@ -133,7 +133,7 @@ Thank you for shopping with us!`,
         <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px; border-bottom: 1px solid #d1d5db; padding-bottom: 10px;">
           <tr>
             <td style="vertical-align: top; font-size: 13px; line-height: 1.5; color: #374151; width: 60%;">
-              <strong>Sold By: ${orderDetails.businessName || "JP Interio"}</strong><br>
+              <strong>Sold By: ${orderDetails.businessName || "Vishti Store"}</strong><br>
               <span style="font-style: italic; font-size: 11px;">Ship-from Address:</span> ${orderDetails.businessAddress || "Not provided"}<br>
               ${orderDetails.businessGstin ? `<strong>GSTIN - ${orderDetails.businessGstin}</strong>` : ""}
             </td>
@@ -228,7 +228,7 @@ Thank you for shopping with us!`,
 
         <!-- Footer -->
         <div style="text-align: right; font-size: 14px; color: #374151; margin-top: 20px;">
-          ${orderDetails.businessName || "JP Interio"}
+          ${orderDetails.businessName || "Vishti Store"}
         </div>
       </div>
     `,
@@ -293,13 +293,13 @@ Total Tax: ₹${orderDetails.taxAmount.toFixed(2)}
 Total Amount: ₹${orderDetails.items.reduce((sum, item) => sum + item.totalAmount, 0).toFixed(2)}
 
 Please process this order promptly.
-JP Interio Admin System`,
+Vishti Store Admin System`,
     html: `
       <div style="font-family: Arial, sans-serif; max-width: 900px; margin: 0 auto; background-color: #ffffff; color: #111827; padding: 20px;">
         
         <!-- Header -->
         <div style="background-color: #000000; padding: 20px; border-bottom: 1px solid #e5e7eb; margin-bottom: 20px;">
-          <h1 style="color: #ffffff; margin: 0 0 8px 0; font-size: 20px; font-weight: 500; letter-spacing: 1px;">JP Interio Admin</h1>
+          <h1 style="color: #ffffff; margin: 0 0 8px 0; font-size: 20px; font-weight: 500; letter-spacing: 1px;">Vishti Store Admin</h1>
           <p style="color: #9ca3af; margin: 0; font-size: 13px;">New Order Alert: #${orderDetails.orderId}</p>
         </div>
 
@@ -386,18 +386,18 @@ JP Interio Admin System`,
 
 export const ResetPasswordEmailTemplate = ({ link }: { link: URL }) => {
   return {
-    subject: "Reset your password - JP Interio",
+    subject: "Reset your password - Vishti Store",
     text: `Click the link to reset your password: ${link}`,
     html: `
       <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; max-width: 600px; margin: 0 auto; background-color: #ffffff;">
         <div style="background-color: #000000; padding: 32px 24px; border-bottom: 1px solid #e5e7eb;">
-          <h1 style="color: #ffffff; margin: 0; font-size: 20px; font-weight: 500; letter-spacing: 1px;">JP Interio</h1>
+          <h1 style="color: #ffffff; margin: 0; font-size: 20px; font-weight: 500; letter-spacing: 1px;">Vishti Store</h1>
         </div>
         
         <div style="padding: 40px 24px;">
           <h2 style="color: #111827; margin: 0 0 8px 0; font-size: 18px; font-weight: 500;">Reset Your Password</h2>
           <p style="color: #6b7280; margin: 0 0 32px 0; font-size: 14px; line-height: 1.6;">
-            You requested to reset your password for your JP Interio account. Click the button below to create a new password.
+            You requested to reset your password for your Vishti Store account. Click the button below to create a new password.
           </p>
           
           <div style="margin: 32px 0;">
@@ -425,7 +425,7 @@ export const ResetPasswordEmailTemplate = ({ link }: { link: URL }) => {
         </div>
         
         <div style="background-color: #f9fafb; padding: 24px; border-top: 1px solid #e5e7eb;">
-          <p style="color: #6b7280; margin: 0; font-size: 13px; text-align: center;">JP Interio</p>
+          <p style="color: #6b7280; margin: 0; font-size: 13px; text-align: center;">Vishti Store</p>
         </div>
       </div>
     `,

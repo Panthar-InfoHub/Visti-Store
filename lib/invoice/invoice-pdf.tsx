@@ -123,7 +123,7 @@ export const InvoicePDFDocument = ({ data }: { data: InvoiceData }) => {
         {/* Seller Info & Invoice Number */}
         <View style={styles.sellerInfoContainer}>
           <View style={styles.sellerLeft}>
-            <Text style={styles.bold}>Sold By: {data.businessName || 'JP Interio'}</Text>
+            <Text style={styles.bold}>Sold By: {data.businessName || 'Vishti Store'}</Text>
             <Text>Ship-from Address: {data.businessAddress || 'Not provided'}</Text>
             {data.businessGstin && <Text style={styles.bold}>GSTIN - {data.businessGstin}</Text>}
           </View>
@@ -224,7 +224,7 @@ export const InvoicePDFDocument = ({ data }: { data: InvoiceData }) => {
         </View>
 
         {/* Footer */}
-        <Text style={styles.footer}>{data.businessName || 'JP Interio'}</Text>
+        <Text style={styles.footer}>{data.businessName || 'Vishti Store'}</Text>
 
       </Page>
     </Document>

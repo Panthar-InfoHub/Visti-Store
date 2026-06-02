@@ -2,6 +2,7 @@ import { generatePageMetadata } from "@/lib/metadata";
 import { HeroCarousel } from "@/components/store/home/hero-carousel";
 import { FeaturedCategoriesNav } from "@/components/store/home/featured-categories-nav";
 import { ShopCategoryCards } from "@/components/store/home/shop-category-cards";
+import { FeaturedCategoryCircles } from "@/components/store/home/featured-category-circles";
 import { FeaturedProducts } from "@/components/store/home/featured-products";
 import { TrustBadges } from "@/components/store/home/trust-badges";
 import { Testimonials } from "@/components/store/home/testimonials";
@@ -66,6 +67,10 @@ export default async function HomePage() {
 
       <Suspense fallback={<CategorySkeleton />}>
         <ShopCategoryCards />
+      </Suspense>
+
+      <Suspense fallback={<FeaturedCategoryCirclesSkeleton />}>
+        <FeaturedCategoryCircles />
       </Suspense>
 
       <Suspense fallback={<ProductSectionSkeleton title="SHOP OUR BESTSELLERS" />}>
@@ -166,6 +171,23 @@ function FAQSectionSkeleton() {
         <div className="max-w-3xl mx-auto space-y-4">
           {[...Array(5)].map((_, i) => (
             <Skeleton key={i} className="h-16 w-full rounded-lg" />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function FeaturedCategoryCirclesSkeleton() {
+  return (
+    <section className="py-8 md:py-12 bg-[#FFF6FC]">
+      <div className="container mx-auto px-4">
+        <div className="flex overflow-x-auto no-scrollbar md:flex-wrap md:justify-center gap-6 md:gap-10 pb-4">
+          {[...Array(7)].map((_, i) => (
+            <div key={i} className="flex flex-col items-center gap-3 shrink-0">
+              <Skeleton className="w-24 h-24 md:w-32 md:h-32 rounded-full" />
+              <Skeleton className="h-4 w-16" />
+            </div>
           ))}
         </div>
       </div>

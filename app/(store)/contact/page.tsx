@@ -5,7 +5,7 @@ import { siteConfig } from "@/site.config";
 export const metadata = generatePageMetadata({
   title: "Contact Us",
   description:
-    "Get in touch with JP Interio. We're here to help with Furniture, Interior Design, and other related solutions.",
+    "Get in touch with Vishti Store. We're here to help with jewelry and other related solutions.",
   path: "/contact",
 });
 
@@ -90,8 +90,8 @@ export default function ContactPage() {
                     Email
                   </h3>
                   <div className="space-y-2">
-                    <p className="text-base" style={{ color: siteConfig.colors.secondary }}>sales@jpinterio.com</p>
-                    <p className="text-base" style={{ color: siteConfig.colors.secondary }}>Kjenterprise@gmail.com</p>
+                    <p className="text-base" style={{ color: siteConfig.colors.secondary }}></p>
+                    {/* <p className="text-base" style={{ color: siteConfig.colors.secondary }}>Kjenterprise@gmail.com</p> */}
                   </div>
                 </div>
 
@@ -107,9 +107,9 @@ export default function ContactPage() {
                     className="text-base leading-relaxed"
                     style={{ color: siteConfig.colors.secondary }}
                   >
-                    JP Interio
+                    Vishti Store
                     <br />
-                    Near JMK Showroom, Avas Vikas Phase 2, Jhansi, Uttar Pradesh 284003
+                  Rise Jhansi Nagar Nigam premise, near Elite Circle, Jhansi, Uttar Pradesh 284001
                   </p>
                 </div>
 
