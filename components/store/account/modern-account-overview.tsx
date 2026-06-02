@@ -11,6 +11,7 @@ import { useEffect, useState } from "react";
 import { getUserOrderStats } from "@/actions/store/order.actions";
 import { formatPrice, formatDate } from "@/utils/format";
 import { OrderStatus } from "@/prisma/generated/prisma";
+import { siteConfig } from "@/site.config";
 
 const getStatusConfig = (status: OrderStatus) => {
   const configs = {
@@ -100,8 +101,11 @@ export function ModernAccountOverview() {
           className="group bg-white rounded-[32px] p-6 sm:p-8 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] hover:shadow-md transition-all duration-200"
         >
           <div className="flex items-center gap-4 sm:gap-5">
-            <div className="p-3 sm:p-4 bg-[#FAF5F0] rounded-2xl group-hover:bg-[#F2EAE1] transition-colors shrink-0">
-              <Package className="h-6 w-6 sm:h-7 sm:w-7 text-[#BFA083]" />
+            <div
+              className="p-3 sm:p-4 rounded-2xl transition-colors shrink-0 group-hover:opacity-90"
+              style={{ backgroundColor: siteConfig.colors.bgColor }}
+            >
+              <Package className="h-6 w-6 sm:h-7 sm:w-7" style={{ color: siteConfig.colors.primary }} />
             </div>
             <div className="flex-1 min-w-0">
               <p className="text-xl sm:text-2xl font-bold text-[#111111]">{orderCount}</p>
@@ -115,8 +119,11 @@ export function ModernAccountOverview() {
           className="group bg-white rounded-[32px] p-6 sm:p-8 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] hover:shadow-md transition-all duration-200"
         >
           <div className="flex items-center gap-4 sm:gap-5">
-            <div className="p-3 sm:p-4 bg-[#FAF5F0] rounded-2xl group-hover:bg-[#F2EAE1] transition-colors shrink-0">
-              <MapPin className="h-6 w-6 sm:h-7 sm:w-7 text-[#BFA083]" />
+            <div
+              className="p-3 sm:p-4 rounded-2xl transition-colors shrink-0 group-hover:opacity-90"
+              style={{ backgroundColor: siteConfig.colors.bgColor }}
+            >
+              <MapPin className="h-6 w-6 sm:h-7 sm:w-7" style={{ color: siteConfig.colors.primary }} />
             </div>
             <div className="flex-1 min-w-0">
               <p className="text-xl sm:text-2xl font-bold text-[#111111]">{addressCount}</p>
@@ -130,8 +137,11 @@ export function ModernAccountOverview() {
           className="group bg-white rounded-[32px] p-6 sm:p-8 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] hover:shadow-md transition-all duration-200"
         >
           <div className="flex items-center gap-4 sm:gap-5">
-            <div className="p-3 sm:p-4 bg-[#FAF5F0] rounded-2xl group-hover:bg-[#F2EAE1] transition-colors shrink-0">
-              <Heart className="h-6 w-6 sm:h-7 sm:w-7 text-[#BFA083]" />
+            <div
+              className="p-3 sm:p-4 rounded-2xl transition-colors shrink-0 group-hover:opacity-90"
+              style={{ backgroundColor: siteConfig.colors.bgColor }}
+            >
+              <Heart className="h-6 w-6 sm:h-7 sm:w-7" style={{ color: siteConfig.colors.primary }} />
             </div>
             <div className="flex-1 min-w-0">
               <p className="text-xl sm:text-2xl font-bold text-[#111111]">{wishlistItems.length}</p>
@@ -149,7 +159,8 @@ export function ModernAccountOverview() {
             variant="ghost"
             size="sm"
             asChild
-            className="text-[#BFA083] hover:text-[#BFA083] hover:bg-[#FAF5F0] text-sm sm:text-base font-semibold"
+            className="text-sm sm:text-base font-semibold hover:bg-black/5"
+            style={{ color: siteConfig.colors.primary }}
           >
             <Link href="/account/orders">View All →</Link>
           </Button>
@@ -157,11 +168,19 @@ export function ModernAccountOverview() {
 
         {recentOrders.length === 0 ? (
           <div className="flex flex-col items-center justify-center py-12">
-            <div className="inline-flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-[#FAF5F0] mb-4">
-              <Package className="h-6 w-6 sm:h-8 sm:w-8 text-[#BFA083]" />
+            <div
+              className="inline-flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 rounded-2xl mb-4"
+              style={{ backgroundColor: siteConfig.colors.bgColor }}
+            >
+              <Package className="h-6 w-6 sm:h-8 sm:w-8" style={{ color: siteConfig.colors.primary }} />
             </div>
             <p className="text-lg sm:text-xl font-bold text-[#111111] mb-4">No orders yet</p>
-            <Button asChild size="default" className="rounded-full bg-[#284239] hover:bg-[#1a2b25] text-white px-8 h-12">
+            <Button
+              asChild
+              size="default"
+              className="rounded-full text-white px-8 h-12 hover:opacity-90 transition-opacity"
+              style={{ backgroundColor: siteConfig.colors.primary }}
+            >
               <Link href="/products">Browse Products</Link>
             </Button>
           </div>

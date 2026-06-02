@@ -58,7 +58,7 @@ export async function FeaturedProducts({ title, filter }: FeaturedProductsProps)
     <section
       className={`py-12 md:py-20 ${
         isBestseller
-          ? "bg-[url('/image/bestseller_bg.jpg')] bg-cover bg-center bg-no-repeat"
+          ? "bg-[url('/visti-image/bestseller-bg.png')] bg-cover  bg-no-repeat"
           : "bg-gray-50"
       }`}
     >
@@ -77,14 +77,14 @@ export async function FeaturedProducts({ title, filter }: FeaturedProductsProps)
               className="text-3xl md:text-4xl font-bold mb-3 tracking-tight"
               style={{ color: siteConfig.colors.secondary }}
             >
-              {isBestseller ? "Top Picks for Home Decor" : title}
+              {isBestseller ? "Top Picks for Home Jewellery" : title}
             </h2>
             <p 
               className="text-sm md:text-base font-medium"
-              style={{ color: siteConfig.colors.secondary }}
+              style={{ color: siteConfig.colors.tertiary }}
             >
               {isBestseller
-                ? "This week's handpicked items from our interior collection."
+                ? "This week's curated selection from our jewellery collection."
                 : "Discover our most popular products"}
             </p>
           </div>

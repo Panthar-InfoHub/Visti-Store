@@ -166,7 +166,7 @@ export function ModernProductCard({ product }: ModernProductCardProps) {
             <div className="flex flex-col items-end shrink-0 pt-0.5">
               <span
                 className="text-base font-extrabold leading-none"
-                style={{ color: siteConfig.colors.secondary }}
+                style={{ color: siteConfig.colors.tertiary }}
               >
                 {formatPrice(displayDetails.price)}
               </span>
@@ -227,7 +227,7 @@ export function ModernProductCard({ product }: ModernProductCardProps) {
                 : "text-white hover:opacity-90"
               }`}
             variant={inCart ? "outline" : "default"}
-            style={!inCart ? { backgroundColor: siteConfig.colors.secondary } : undefined}
+            style={!inCart ? { backgroundColor: siteConfig.colors.tertiary } : undefined}
           >
             {isAddingToCart ? (
               <Loader2 className="h-4 w-4 animate-spin" />

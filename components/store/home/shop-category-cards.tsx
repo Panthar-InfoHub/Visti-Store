@@ -95,7 +95,7 @@ export async function ShopCategoryCards() {
           <div>
             <p 
               className="text-sm font-semibold uppercase tracking-wider mb-3"
-              style={{ color: siteConfig.colors.primary }}
+              style={{ color: siteConfig.colors.quaternary }}
             >
               Curated Collections
             </p>
@@ -103,13 +103,13 @@ export async function ShopCategoryCards() {
               className="text-3xl md:text-4xl font-bold"
               style={{ color: siteConfig.colors.secondary }}
             >
-              Key Elements for a Mindful Living Space
+              Accessories that spark elegance
             </h2>
           </div>
           <Link
             href="/categories"
             className="flex items-center gap-1.5 text-sm font-semibold hover:opacity-80 transition-opacity whitespace-nowrap md:mb-1"
-            style={{ color: siteConfig.colors.primary }}
+            style={{ color: siteConfig.colors.quaternary }}
           >
             <span>View All Category</span>
             <span className="text-base">→</span>

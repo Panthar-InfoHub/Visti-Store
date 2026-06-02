@@ -9,6 +9,7 @@ import { WishlistItemCard } from "@/components/store/account/wishlist-item-card"
 import Link from "next/link";
 import { useSession } from "@/lib/auth-client";
 import { useRouter } from "next/navigation";
+import { siteConfig } from "@/site.config";
 
 export default function WishlistPage() {
   const { data: session, isPending } = useSession();
@@ -38,8 +39,8 @@ export default function WishlistPage() {
         {/* Header */}
         <div className="flex items-center justify-between mb-6">
           <div className="flex items-center gap-3">
-            <div className="p-2 bg-pink-50 rounded-lg">
-              <Heart className="h-5 w-5 text-pink-600" />
+            <div className="p-2 rounded-lg" style={{ backgroundColor: siteConfig.colors.bgColor }}>
+              <Heart className="h-5 w-5" style={{ color: siteConfig.colors.primary }} />
             </div>
             <div className="space-y-1">
               <Skeleton className="h-6 w-32" />
@@ -109,13 +110,13 @@ export default function WishlistPage() {
         {/* Wishlist Items */}
         {items.length === 0 ? (
           <div className="text-center py-12">
-            <Heart className="h-16 w-16 mx-auto text-muted-foreground mb-4" />
+            <Heart className="h-16 w-16 mx-auto mb-4" style={{ color: siteConfig.colors.primary }} />
             <h3 className="text-lg font-semibold mb-2">Your wishlist is empty</h3>
             <p className="text-muted-foreground mb-6">
               Save items you love to your wishlist and shop them later
             </p>
             <Link href="/products">
-              <Button>
+              <Button style={{ backgroundColor: siteConfig.colors.primary }} className="text-white hover:opacity-90 transition-opacity">
                 <ShoppingCart className="h-4 w-4 mr-2" />
                 Browse Products
               </Button>

@@ -19,13 +19,13 @@ export default function AboutPage() {
               className="text-3xl md:text-5xl lg:text-6xl font-semibold tracking-tight"
               style={{ color: siteConfig.colors.secondary }}
             >
-              About JP Interio
+              About Visti
             </h1>
             <p 
               className="text-base md:text-lg lg:text-xl leading-relaxed max-w-3xl mx-auto"
               style={{ color: siteConfig.colors.secondary }}
             >
-              A design-driven interior solutions company dedicated to creating modern, functional, and aesthetically refined spaces. We specialize in residential, commercial, and luxury interior design services, offering innovative concepts, customized solutions, and complete turnkey execution for homes, offices, retail spaces, hotels, and businesses.
+              A luxury jewelry destination committed to creating exquisite pieces that reflect sophistication, beauty, and enduring value. We specialize in handcrafted gold, diamond, and gemstone jewelry, offering exclusive collections for bridal wear, special occasions, and modern lifestyles. With a focus on superior craftsmanship, innovative design, and personalized service, we transform precious metals and stones into timeless treasures.
             </p>
           </div>
         </div>
@@ -39,7 +39,7 @@ export default function AboutPage() {
             <div className="lg:col-span-2">
               <div className="relative aspect-square max-w-[280px] md:max-w-[280px] mx-auto w-full rounded-xl overflow-hidden shadow-lg">
                 <Image
-                  src="/image/ceo.png"
+                  src="/visti-image/ceo.png"
                   alt="Nishant Kishor Sharma - Founder & CEO"
                   fill
                   className="object-cover"
@@ -51,13 +51,13 @@ export default function AboutPage() {
                   className="font-semibold text-lg md:text-xl"
                   style={{ color: siteConfig.colors.secondary }}
                 >
-                  Pavneet Singh
+                  Pavaki Arora
                 </p>
                 <p 
                   className="mt-1 text-sm md:text-base"
                   style={{ color: siteConfig.colors.secondary }}
                 >
-                  Founder & CEO
+                  Founder
                 </p>
               </div>
             </div>
@@ -75,7 +75,7 @@ export default function AboutPage() {
                   className="text-xl md:text-2xl lg:text-3xl font-semibold leading-tight mb-6"
                   style={{ color: siteConfig.colors.secondary }}
                 >
-                  Designing Timeless Spaces for Modern Living
+                  Timeless Elegance, Crafted to Perfection
                 </h2>
               </div>
 
@@ -84,13 +84,13 @@ export default function AboutPage() {
                   className="leading-relaxed text-sm md:text-base"
                   style={{ color: siteConfig.colors.secondary }}
                 >
-                  "At JP INTERIO, our vision is to transform spaces into experiences that inspire comfort, functionality, and elegance. We don’t just create interiors and furniture — we craft environments that reflect personality, lifestyle, and modern living with creativity and precision."
+                  At Visti, our vision is to redefine luxury jewelry by creating exquisite pieces that celebrate beauty, heritage, and individuality. We believe jewelry is more than an accessory—it is a reflection of personal stories, cherished memories, and timeless elegance.
                 </p>
                 <p 
                   className="leading-relaxed text-sm md:text-base"
                   style={{ color: siteConfig.colors.secondary }}
                 >
-                  "Our mission is to deliver innovative interior design solutions and premium furniture that combine aesthetics with practicality. Through thoughtful design, quality craftsmanship, and attention to detail, we are committed to creating spaces where ideas come to life and every corner tells a story."
+                  Our mission is to craft exceptional jewelry that seamlessly blends artistry, innovation, and unmatched craftsmanship. By using the finest materials and maintaining the highest standards of quality, we are dedicated to offering creations that inspire confidence, mark life's most meaningful moments, and remain treasured for generations.
                 </p>
               </div>
             </div>
@@ -113,7 +113,7 @@ export default function AboutPage() {
                 className="text-lg md:text-xl lg:text-2xl font-medium leading-relaxed"
                 style={{ color: siteConfig.colors.secondary }}
               >
-                To create elegant, functional, and personalized interiors with premium furniture and timeless design solutions.
+                To create beautiful and meaningful jewelry pieces that celebrate life's special moments with elegance and authenticity.
               </p>
             </div>
             <div>
@@ -127,7 +127,7 @@ export default function AboutPage() {
                 className="text-sm md:text-base leading-relaxed"
                 style={{ color: siteConfig.colors.secondary }}
               >
-                Founded by Pavneet Singh, the company aims to redefine modern interiors through creativity, functionality, and timeless design. With a strong focus on quality craftsmanship and personalized solutions, we create elegant spaces and furniture that enhance everyday living while reflecting style, comfort, and sophistication.
+                Founded by Pavaki Arora, the brand was established with a vision to create jewelry that embodies elegance, artistry, and enduring value. Through meticulous craftsmanship, premium materials, and attention to detail, we design timeless pieces that inspire confidence, celebrate milestones, and transform precious moments into lasting memories.
               </p>
             </div>
           </div>
@@ -148,17 +148,17 @@ export default function AboutPage() {
               className="text-base md:text-lg"
               style={{ color: siteConfig.colors.secondary }}
             >
-              Comprehensive interior and furniture solutions for modern living spaces
+              Timeless jewelry creations designed to celebrate life's most precious moments
             </p>
           </div>
 
           <div className="grid sm:grid-cols-2 gap-x-8 gap-y-6">
             {[
-              "Residential & Commercial Interior Design",
-              "Customized Furniture Solutions",
-              "Turnkey Project Execution",
-              "3D Visualization & Walkthroughs",
-              "Material Selection & Procurement",
+              "Fine Gold, Diamond & Gemstone Jewelry",
+              "Exclusive Bridal & Wedding Collections",
+              "Bespoke Jewelry Design Services",
+              "Luxury Fashion & Everyday Wear Collections",
+              "Jewelry Care, Repair & Restoration",
             ].map((item, index) => (
               <div key={index} className="flex items-start gap-3 group">
                 <div 
@@ -185,17 +185,17 @@ export default function AboutPage() {
               className="text-2xl md:text-3xl font-semibold mb-3"
               style={{ color: siteConfig.colors.secondary }}
             >
-              Why Choose JP Interio?
+              Why Choose Visti?
             </h2>
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-8 gap-y-8">
             {[
-              "High-quality and trusted materials",
-              "Wide range of materials and finishes",
-              "Professional project management",
-              "On-time delivery and installation",
-              "Post-project support and maintenance",
+              "Premium Quality Craftsmanship",
+              "Certified Diamonds & Authentic Jewelry",
+              "Unique & Innovative Designs",
+              "Personalized Customer Experience",
+              "Ethical Sourcing & Sustainability",
             ].map((item, index) => (
               <div key={index} className="group">
                 <div 
@@ -223,8 +223,7 @@ export default function AboutPage() {
             className="text-xl md:text-2xl font-medium leading-relaxed"
             style={{ color: siteConfig.colors.secondary }}
           >
-            JP Interio is committed to shaping the next generation of living spaces through creativity,
-            functionality, and timeless design.
+            Visti is dedicated to creating exquisite jewelry that embodies sophistication, artistry, and timeless elegance for generations to cherish.
           </p>
         </div>
       </section>

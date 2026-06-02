@@ -12,6 +12,7 @@ import Link from "next/link";
 import { getUserOrders } from "@/actions/store/order.actions";
 import { OrderStatus } from "@/prisma/generated/prisma";
 import { toast } from "sonner";
+import { siteConfig } from "@/site.config";
 
 const getStatusConfig = (status: OrderStatus) => {
   switch (status) {
@@ -104,14 +105,22 @@ export function ModernOrdersList() {
       {orders.length === 0 ? (
         <div className="bg-white rounded-[32px] shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] border-0 p-8 sm:p-12 min-h-[400px] flex items-center justify-center">
           <div className="text-center flex flex-col items-center">
-            <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-[#FAF5F0] mb-4">
-              <Package className="h-8 w-8 text-[#BFA083]" />
+            <div
+              className="inline-flex items-center justify-center w-16 h-16 rounded-2xl mb-4"
+              style={{ backgroundColor: siteConfig.colors.bgColor }}
+            >
+              <Package className="h-8 w-8" style={{ color: siteConfig.colors.primary }} />
             </div>
             <h3 className="text-xl font-bold text-[#111111] mb-2">No orders yet</h3>
             <p className="text-gray-500 mb-6">
               Start shopping to see your orders here
             </p>
-            <Button asChild size="default" className="rounded-full bg-[#284239] hover:bg-[#1a2b25] text-white px-8 h-12">
+            <Button
+              asChild
+              size="default"
+              className="rounded-full text-white px-8 h-12 hover:opacity-90 transition-opacity"
+              style={{ backgroundColor: siteConfig.colors.primary }}
+            >
               <Link href="/products">Browse Products</Link>
             </Button>
           </div>

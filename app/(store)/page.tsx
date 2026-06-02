@@ -17,6 +17,8 @@ import { siteConfig } from "@/site.config";
 import Image from "next/image";
 import { VisualizeSection } from "@/components/store/home/visualize-section";
 import { InteriorExperienceSection } from "@/components/store/home/interior-experience-section";
+import { BridalCollectionSection } from "@/components/store/home/bridal-collection-section";
+import { JewelleryTestimonialsSection } from "@/components/store/home/jewellery-testimonials-section";
 
 export const metadata = generatePageMetadata({
   path: "/",
@@ -70,7 +72,9 @@ export default async function HomePage() {
         <FeaturedProducts title="SHOP OUR BESTSELLERS" filter="bestseller" />
       </Suspense>
 
-      <VisualizeSection />
+      <BridalCollectionSection />
+
+      {/* <VisualizeSection /> */}
 
       
 
@@ -79,8 +83,10 @@ export default async function HomePage() {
       <Suspense fallback={<ProductSectionSkeleton title="NEW LAUNCH" />}>
         <FeaturedProducts title="NEW LAUNCH" filter="new" />
       </Suspense>
-      
-      <InteriorExperienceSection />
+
+      <JewelleryTestimonialsSection />
+
+      {/* <InteriorExperienceSection /> */}
       {/* <Achievements />
       <LabSetup />
       <NewsSection />

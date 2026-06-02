@@ -22,7 +22,7 @@ const BarContent = async () => {
   return (
     <div
       style={{
-        backgroundColor: siteConfig.colors.quaternary,
+        backgroundColor: siteConfig.colors.announcement,
         color: siteConfig.colors.primary,
       }}
       className="py-3 px-4 text-center text-sm font-semibold"

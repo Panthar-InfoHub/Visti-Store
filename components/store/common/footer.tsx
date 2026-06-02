@@ -15,9 +15,9 @@ export async function Footer() {
     <footer
       className="relative text-[#2d2d2d] border-t border-gray-200"
       style={{
-        backgroundImage: "url('/image/footer-bg.png')",
+        backgroundImage: "url('/visti-image/footer.jpg')",
         backgroundSize: "cover",
-        backgroundPosition: "right bottom",
+        backgroundPosition: "center",
       }}
     >
       {/* Overlay to ensure text readability if needed, or just let the natural background show */}
@@ -25,7 +25,70 @@ export async function Footer() {
 
       <div className="w-full py-16 px-6 md:px-12 lg:px-20 relative z-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-12">
-          {/* Brand Column (Left) */}
+          {/* Empty Space for the Vases (Far Left) */}
+          <div className="hidden lg:block lg:col-span-6 pointer-events-none"></div>
+
+          {/* Customer Service Column (Middle-Left) */}
+          <div className="lg:col-span-2">
+            <h3 className="text-xs font-bold tracking-[0.15em] uppercase text-[#1b2b22] mb-6">
+              CUSTOMER SERVICE
+            </h3>
+            <ul className="space-y-3">
+              <li>
+                <Link
+                  href="/shipping"
+                  className="text-[#3b4c40] text-sm hover:text-[#1b2b22] transition-colors"
+                >
+                  Shipping Policy
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/returns"
+                  className="text-[#3b4c40] text-sm hover:text-[#1b2b22] transition-colors"
+                >
+                  Return and Refund Policy
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/terms-and-conditions"
+                  className="text-[#3b4c40] text-sm hover:text-[#1b2b22] transition-colors"
+                >
+                  Terms and Conditions
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/privacy-policy"
+                  className="text-[#3b4c40] text-sm hover:text-[#1b2b22] transition-colors"
+                >
+                  Privacy Policy
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Shop Column (Middle-Right) */}
+          <div className="lg:col-span-1">
+            <h3 className="text-xs font-bold tracking-[0.15em] uppercase text-[#1b2b22] mb-6">
+              SHOP
+            </h3>
+            <ul className="space-y-3">
+              {topCategories.map((category) => (
+                <li key={category.slug}>
+                  <Link
+                    href={`/categories/${category.slug}`}
+                    className="text-[#3b4c40] text-sm hover:text-[#1b2b22] transition-colors"
+                  >
+                    {category.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Brand Column (Extreme Right) */}
           <div className="lg:col-span-3">
             <h2 className="text-xl md:text-2xl font-bold italic text-[#1b2b22] mb-4">
               {siteConfig.name}
@@ -76,69 +139,6 @@ export async function Footer() {
               )}
             </div>
           </div>
-
-          {/* Shop Column (Middle) */}
-          <div className="lg:col-span-2">
-            <h3 className="text-xs font-bold tracking-[0.15em] uppercase text-[#1b2b22] mb-6">
-              SHOP
-            </h3>
-            <ul className="space-y-3">
-              {topCategories.map((category) => (
-                <li key={category.slug}>
-                  <Link
-                    href={`/categories/${category.slug}`}
-                    className="text-[#3b4c40] text-sm hover:text-[#1b2b22] transition-colors"
-                  >
-                    {category.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Customer Service Column (Middle-Right) */}
-          <div className="lg:col-span-3">
-            <h3 className="text-xs font-bold tracking-[0.15em] uppercase text-[#1b2b22] mb-6">
-              CUSTOMER SERVICE
-            </h3>
-            <ul className="space-y-3">
-              <li>
-                <Link
-                  href="/shipping"
-                  className="text-[#3b4c40] text-sm hover:text-[#1b2b22] transition-colors"
-                >
-                  Shipping Policy
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/returns"
-                  className="text-[#3b4c40] text-sm hover:text-[#1b2b22] transition-colors"
-                >
-                  Return and Refund Policy
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/terms-and-conditions"
-                  className="text-[#3b4c40] text-sm hover:text-[#1b2b22] transition-colors"
-                >
-                  Terms and Conditions
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/privacy-policy"
-                  className="text-[#3b4c40] text-sm hover:text-[#1b2b22] transition-colors"
-                >
-                  Privacy Policy
-                </Link>
-              </li>
-            </ul>
-          </div>
-          
-          {/* Empty Space for the Vases (Far Right) */}
-          <div className="hidden lg:block lg:col-span-4 pointer-events-none"></div>
         </div>
 
         {/* Bottom Bar */}

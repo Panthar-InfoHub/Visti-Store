@@ -184,7 +184,7 @@ export function ProductFilters({ categories, isMobile = false }: ProductFiltersP
             <Label
               htmlFor="all-categories"
               className={`text-sm cursor-pointer ${!currentCategory ? 'font-medium' : 'font-normal'}`}
-              style={{ color: !currentCategory ? siteConfig.colors.secondary : siteConfig.colors.primary }}
+              style={{ color: !currentCategory ? siteConfig.colors.quaternary : siteConfig.colors.secondary }}
             >
               All Categories
             </Label>
@@ -203,7 +203,7 @@ export function ProductFilters({ categories, isMobile = false }: ProductFiltersP
                 <Label
                   htmlFor={category.slug}
                   className={`text-sm cursor-pointer ${currentCategory === category.slug ? 'font-medium' : 'font-normal'}`}
-                  style={{ color: currentCategory === category.slug ? siteConfig.colors.secondary : siteConfig.colors.primary }}
+                  style={{ color: currentCategory === category.slug ? siteConfig.colors.quaternary : siteConfig.colors.secondary }}
                 >
                   {category.name}
                 </Label>
@@ -271,7 +271,7 @@ export function ProductFilters({ categories, isMobile = false }: ProductFiltersP
             size="sm"
             className="w-full text-white hover:opacity-90"
             onClick={applyPriceFilter}
-            style={{ backgroundColor: siteConfig.colors.secondary }}
+            style={{ backgroundColor: siteConfig.colors.tertiary }}
           >
             Apply Price Filter
           </Button>

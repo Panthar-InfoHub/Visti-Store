@@ -3,7 +3,7 @@ export const siteConfig = {
   title: "Visti",
   name: "Visti",
   description:
-    "Discover Visti, Best Online Store for jwellery and Fashion.",
+    "Explore Lumina Gems, where elegance blends with ethical sourcing to craft stunning, sustainable jewellery pieces.",
   domain: "https://vististore.com",
   // Logo
   logo: {
@@ -40,8 +40,9 @@ export const siteConfig = {
     primary: "#ED0D0C",
     secondary: "#5A2D00",
     tertiary: "#0DBB66",
-    quaternary: "#FFBDC7",
-    bgColor: "#FFF6FC"
+    quaternary: "#FF4FC4",
+    bgColor: "#FFF6FC",
+    announcement : "#FFBDC7"
   }
 } as const;
 

@@ -33,6 +33,7 @@ import {
   deleteAddress,
   setDefaultAddress,
 } from "@/actions/store/address.actions";
+import { siteConfig } from "@/site.config";
 
 interface Address {
   id: string;
@@ -212,10 +213,13 @@ export function AddressesList() {
               onClick={() => handleOpenDialog()}
               className="flex flex-col items-center justify-center min-h-[280px] rounded-[2rem] border-2 border-dashed border-gray-200 bg-gray-50/50 hover:bg-gray-50 transition-colors gap-4 w-full"
             >
-              <div className="h-12 w-12 rounded-full bg-[#E8F3ED] flex items-center justify-center text-[#2F4F4F]">
+              <div
+                className="h-12 w-12 rounded-full flex items-center justify-center"
+                style={{ backgroundColor: siteConfig.colors.bgColor, color: siteConfig.colors.primary }}
+              >
                 <Plus className="h-6 w-6" />
               </div>
-              <span className="font-semibold text-[#2F4F4F]">Add New Address</span>
+              <span className="font-semibold" style={{ color: siteConfig.colors.secondary }}>Add New Address</span>
             </button>
           </DialogTrigger>
             <DialogContent className="w-[calc(100vw-2rem)] max-w-xl max-h-[85vh] p-0 overflow-hidden sm:rounded-[1.5rem] border-none shadow-2xl gap-0">
@@ -224,7 +228,7 @@ export function AddressesList() {
                 className="max-h-[85vh] overflow-y-auto overscroll-contain [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] p-5 sm:p-7 flex flex-col"
               >
                 <DialogHeader className="mb-4">
-                  <DialogTitle className="text-2xl font-bold text-[#1A3826]">
+                  <DialogTitle className="text-2xl font-bold" style={{ color: siteConfig.colors.secondary }}>
                   {editingAddress ? "Edit Address" : "Add New Address"}
                 </DialogTitle>
               </DialogHeader>
@@ -344,7 +348,8 @@ export function AddressesList() {
                     id="isDefault"
                     checked={formData.isDefault}
                     onChange={(e) => setFormData({ ...formData, isDefault: e.target.checked })}
-                    className="h-5 w-5 rounded border-gray-300 text-[#2F4F4F] focus:ring-[#2F4F4F] cursor-pointer"
+                    className="h-5 w-5 rounded border-gray-300 cursor-pointer"
+                    style={{ accentColor: siteConfig.colors.primary }}
                   />
                   <Label htmlFor="isDefault" className="cursor-pointer font-bold text-sm text-gray-900">
                     Set as default address
@@ -359,12 +364,13 @@ export function AddressesList() {
                     resetForm();
                   }}
                   disabled={isSaving}
-                  className="rounded-full px-10 py-6 border-[#E5D5C5] text-[#C4A484] font-bold hover:bg-[#FAF6F3] hover:text-[#B39373] w-full sm:w-auto"
+                  className="rounded-full px-10 py-6 border border-gray-200 text-gray-500 font-bold hover:bg-black/5 bg-transparent w-full sm:w-auto"
                 >
                   Cancel
                 </Button>
                 <Button
-                  className="rounded-full px-10 py-6 bg-[#2F4F4F] hover:bg-[#1A3826] text-white font-bold w-full sm:w-auto"
+                  className="rounded-full px-10 py-6 text-white font-bold w-full sm:w-auto hover:opacity-90 transition-opacity"
+                  style={{ backgroundColor: siteConfig.colors.primary }}
                   onClick={handleSave}
                   disabled={isSaving}
                 >
@@ -386,7 +392,10 @@ export function AddressesList() {
           <div key={address.id} className="bg-white rounded-[2rem] p-6 sm:p-8 shadow-[0_8px_30px_rgb(0,0,0,0.06)] flex flex-col min-h-[280px] relative">
             <div className="mb-6">
               {address.isDefault ? (
-                <div className="inline-block bg-[#2F4F4F] text-white text-[10px] font-bold px-3 py-1.5 rounded-full uppercase tracking-wider mb-5">
+                <div
+                  className="inline-block text-white text-[10px] font-bold px-3 py-1.5 rounded-full uppercase tracking-wider mb-5"
+                  style={{ backgroundColor: siteConfig.colors.primary }}
+                >
                   Default
                 </div>
               ) : (

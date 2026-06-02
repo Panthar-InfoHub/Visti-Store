@@ -9,6 +9,7 @@ import { toast } from "sonner";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
+import { siteConfig } from "@/site.config";
 
 const navigation = [
   { name: "Overview", href: "/account", icon: LayoutGrid },
@@ -60,10 +61,9 @@ export function AccountNav() {
             onClick={() => setSheetOpen(false)}
             className={cn(
               "flex items-center gap-4 px-5 py-3.5 rounded-full transition-all text-[15px] font-semibold w-[90%]",
-              isActive
-                ? "bg-[#FAF5F0] text-[#BFA083]"
-                : "text-gray-500 hover:text-gray-900 hover:bg-black/5"
+              !isActive && "text-gray-500 hover:text-gray-900 hover:bg-black/5"
             )}
+            style={isActive ? { backgroundColor: siteConfig.colors.announcement, color: siteConfig.colors.primary } : undefined}
           >
             <Icon className="h-5 w-5" />
             <span>{item.name}</span>
@@ -93,7 +93,7 @@ export function AccountNav() {
             <Menu className="h-5 w-5" />
           </Button>
         </SheetTrigger>
-        <SheetContent side="left" className="w-[280px] p-6 bg-[#F8F6F2] border-r-0">
+        <SheetContent side="left" className="w-[280px] p-6 border-r-0" style={{ backgroundColor: siteConfig.colors.bgColor }}>
           <div className="flex flex-col pt-6">
             <nav className="space-y-1">
               <NavContent />
