@@ -9,7 +9,7 @@ export const auth = betterAuth({
   database: prismaAdapter(prisma, {
     provider: "postgresql",
   }),
-  trustedOrigins: ["https://vyomtics.com", "https://vyomtics.vercel.app", "http://localhost:3000","http://192.168.1.15:3000"],
+  trustedOrigins: ["https://vishtistore.in", "https://www.vishtistore.in", "http://localhost:3000"],
   emailAndPassword: {
     enabled: true,
     requireEmailVerification: false,
