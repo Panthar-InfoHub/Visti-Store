@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { Menu, User } from "lucide-react";
@@ -18,7 +18,12 @@ interface MobileMenuProps {
 
 export function MobileMenu({ navigationLinks }: MobileMenuProps) {
   const [open, setOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const router = useRouter();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const handleLinkClick = (href: string) => {
     setOpen(false);
@@ -26,6 +31,14 @@ export function MobileMenu({ navigationLinks }: MobileMenuProps) {
       router.push(href);
     }, 100);
   };
+
+  if (!mounted) {
+    return (
+      <Button variant="ghost" size="icon" className="lg:hidden">
+        <Menu className="h-5 w-5" />
+      </Button>
+    );
+  }
 
   return (
     <Sheet open={open} onOpenChange={setOpen}>
