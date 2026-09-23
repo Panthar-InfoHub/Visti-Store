@@ -6,7 +6,7 @@ import { LayoutGrid, Package, MapPin, Heart, LogOut, Menu } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { authClient } from "@/lib/auth-client";
 import { toast } from "sonner";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { siteConfig } from "@/site.config";
@@ -94,6 +94,9 @@ export function AccountNav() {
           </Button>
         </SheetTrigger>
         <SheetContent side="left" className="w-[280px] p-6 border-r-0" style={{ backgroundColor: siteConfig.colors.bgColor }}>
+          <SheetHeader className="sr-only">
+            <SheetTitle>Account Navigation</SheetTitle>
+          </SheetHeader>
           <div className="flex flex-col pt-6">
             <nav className="space-y-1">
               <NavContent />
