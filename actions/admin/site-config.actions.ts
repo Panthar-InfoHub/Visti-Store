@@ -14,10 +14,19 @@ export async function getSiteConfig() {
       config = await prisma.siteConfig.create({
         data: {
           shippingCharge: 50,
-          freeShippingMinOrder: 500,
+          freeShippingMinOrder: 1299,
           showAnnouncementBar: true,
-          announcementText: "Free shipping on orders above ₹500!",
+          announcementText: "Free shipping on orders above ₹1299!",
           invoicePrefix: "INV",
+        },
+      });
+    } else if (config.freeShippingMinOrder === 500 || config.announcementText.includes("500")) {
+      // Auto-update legacy default threshold to 1299
+      config = await prisma.siteConfig.update({
+        where: { id: config.id },
+        data: {
+          freeShippingMinOrder: 1299,
+          announcementText: config.announcementText.replace("500", "1299"),
         },
       });
     }
@@ -56,9 +65,9 @@ export async function updateSiteConfig(data: {
       config = await prisma.siteConfig.create({
         data: {
           shippingCharge: data.shippingCharge ?? 50,
-          freeShippingMinOrder: data.freeShippingMinOrder ?? 500,
+          freeShippingMinOrder: data.freeShippingMinOrder ?? 1299,
           showAnnouncementBar: data.showAnnouncementBar ?? true,
-          announcementText: data.announcementText ?? "Free shipping on orders above ₹500!",
+          announcementText: data.announcementText ?? "Free shipping on orders above ₹1299!",
           invoicePrefix: data.invoicePrefix ?? "INV",
         },
       });
@@ -111,8 +120,8 @@ export async function calculateShippingCharge(orderTotal: number) {
       return {
         success: true,
         data: {
-          shippingCharge: orderTotal >= 500 ? 0 : 50,
-          isFreeShipping: orderTotal >= 500,
+          shippingCharge: orderTotal >= 1299 ? 0 : 50,
+          isFreeShipping: orderTotal >= 1299,
         },
       };
     }

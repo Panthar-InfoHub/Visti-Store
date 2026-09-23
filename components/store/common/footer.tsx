@@ -36,6 +36,22 @@ export async function Footer() {
             <ul className="space-y-3">
               <li>
                 <Link
+                  href="/about"
+                  className="text-[#3b4c40] text-sm hover:text-[#1b2b22] transition-colors"
+                >
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/contact"
+                  className="text-[#3b4c40] text-sm hover:text-[#1b2b22] transition-colors"
+                >
+                  Contact Us
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/shipping"
                   className="text-[#3b4c40] text-sm hover:text-[#1b2b22] transition-colors"
                 >

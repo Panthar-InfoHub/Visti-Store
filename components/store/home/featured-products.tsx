@@ -79,14 +79,18 @@ export async function FeaturedProducts({ title, filter }: FeaturedProductsProps)
             >
               {isBestseller ? "Top Picks for Home Jewellery" : title}
             </h2>
-            <p 
-              className="text-sm md:text-base font-medium"
-              style={{ color: siteConfig.colors.tertiary }}
-            >
-              {isBestseller
-                ? "This week's curated selection from our jewellery collection."
-                : "Discover our most popular products"}
-            </p>
+            {isBestseller ? (
+              <p className="text-sm md:text-base font-medium text-black">
+                This week's curated selection from our jewellery collection.
+              </p>
+            ) : (
+              <p 
+                className="text-sm md:text-base font-medium"
+                style={{ color: siteConfig.colors.tertiary }}
+              >
+                Discover our most popular products
+              </p>
+            )}
           </div>
           {isBestseller && (
             <a

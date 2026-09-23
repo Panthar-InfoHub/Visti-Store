@@ -14,22 +14,25 @@ export function BridalCollectionSection() {
               className="text-4xl md:text-5xl lg:text-[52px] font-bold mb-6 leading-tight tracking-tight"
               style={{ color: siteConfig.colors.secondary }}
             >
-              Explore Our Bridal<br />Necklace Collection
+              About Us
             </h2>
-            <p 
-              className="text-lg mb-10 leading-relaxed font-medium"
-              style={{ color: siteConfig.colors.secondary, opacity: 0.7 }}
+            <div 
+              className="text-base md:text-lg mb-8 leading-relaxed font-medium space-y-4"
+              style={{ color: siteConfig.colors.secondary }}
             >
-              Discover our exquisite bride collection, showcasing a wide
-              range of elegant necklaces designed to add a touch of
-              timeless beauty and sophistication to your special day.
-              Each piece is crafted with care to perfectly complement
-              your wedding ensemble and make your celebration even
-              more memorable.
-            </p>
+              <p>
+                Vishti was born from a simple belief: elegance shouldn&apos;t come with a hefty price tag. I founded Vishti as a teenager with a vision and a love for beautiful things — to make jewellery that sparks elegance and feels accessible to everyone.
+              </p>
+              <p>
+                Every piece is thoughtfully curated to bring out the boldness in you, because true elegance isn&apos;t about how much you spend — it&apos;s about how you carry yourself.
+              </p>
+              <p className="font-semibold text-lg md:text-xl pt-1" style={{ color: siteConfig.colors.primary }}>
+                Bright. Bold. Beautiful. That&apos;s Vishti.
+              </p>
+            </div>
             
             <Link
-              href="/products"
+              href="/about"
               className="inline-block text-white px-8 py-3.5 text-sm uppercase font-bold transition-all duration-300 hover:opacity-90 rounded-sm shadow-sm"
               style={{ backgroundColor: siteConfig.colors.primary }}
             >

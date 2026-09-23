@@ -105,7 +105,7 @@ function ResetPasswordForm() {
       <div className="w-full max-w-md bg-white/5 backdrop-blur-xs rounded-lg shadow-sm border border-gray-200">
         <div className="p-8 md:p-10">
           {/* Logo */}
-          <div className="flex justify-center items-center mx-auto mb-6 relative rounded-lg w-44 h-12">
+          <div className="flex justify-center items-center mx-auto mb-6 relative rounded-lg w-60 h-20">
             <Image
               src={siteConfig.logo.path}
               alt={siteConfig.logo.alt}

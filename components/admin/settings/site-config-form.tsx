@@ -410,7 +410,7 @@ export function SiteConfigForm({ config }: SiteConfigFormProps) {
                 <FormLabel>Announcement Text</FormLabel>
                 <FormControl>
                   <Textarea
-                    placeholder="Free shipping on orders above ₹500!"
+                    placeholder="Free shipping on orders above ₹1299!"
                     className="resize-none"
                     {...field}
                   />
