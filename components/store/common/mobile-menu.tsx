@@ -1,11 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { Menu, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { AdminPanelLink } from "@/components/shared/admin-panel-link";
 import { HeaderWishlistButton } from "./header-wishlist-button";
 
@@ -18,7 +18,12 @@ interface MobileMenuProps {
 
 export function MobileMenu({ navigationLinks }: MobileMenuProps) {
   const [open, setOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const router = useRouter();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const handleLinkClick = (href: string) => {
     setOpen(false);
@@ -26,6 +31,14 @@ export function MobileMenu({ navigationLinks }: MobileMenuProps) {
       router.push(href);
     }, 100);
   };
+
+  if (!mounted) {
+    return (
+      <Button variant="ghost" size="icon" className="lg:hidden">
+        <Menu className="h-5 w-5" />
+      </Button>
+    );
+  }
 
   return (
     <Sheet open={open} onOpenChange={setOpen}>
@@ -35,6 +48,9 @@ export function MobileMenu({ navigationLinks }: MobileMenuProps) {
         </Button>
       </SheetTrigger>
       <SheetContent side="right" className="w-[280px] p-0 bg-background">
+        <SheetHeader className="sr-only">
+          <SheetTitle>Navigation Menu</SheetTitle>
+        </SheetHeader>
         <div className="flex flex-col h-full py-6">
           {/* User Actions */}
           <div className="flex flex-col px-4 pb-4 border-b">

@@ -13,20 +13,28 @@ export default function AboutPage() {
     <div className="bg-white">
       {/* Hero Section - Clean and Minimal */}
       <section className="border-b">
-        <div className="container mx-auto px-6 py-16 md:py-24 max-w-5xl">
-          <div className="text-center space-y-5">
+        <div className="container mx-auto px-6 py-10 md:py-16 max-w-5xl">
+          <div className="text-center space-y-4">
             <h1 
               className="text-3xl md:text-5xl lg:text-6xl font-semibold tracking-tight"
               style={{ color: siteConfig.colors.secondary }}
             >
               About Vishti
             </h1>
-            <p 
-              className="text-base md:text-lg lg:text-xl leading-relaxed max-w-3xl mx-auto"
+            <div 
+              className="text-base md:text-lg lg:text-xl leading-relaxed max-w-3xl mx-auto space-y-4 text-center"
               style={{ color: siteConfig.colors.secondary }}
             >
-              A luxury jewelry destination committed to creating exquisite pieces that reflect sophistication, beauty, and enduring value. We specialize in handcrafted gold, diamond, and gemstone jewelry, offering exclusive collections for bridal wear, special occasions, and modern lifestyles. With a focus on superior craftsmanship, innovative design, and personalized service, we transform precious metals and stones into timeless treasures.
-            </p>
+              <p>
+                Vishti was born from a simple belief: elegance shouldn&apos;t come with a hefty price tag. I founded Vishti as a teenager with a vision and a love for beautiful things — to make jewellery that sparks elegance and feels accessible to everyone.
+              </p>
+              <p>
+                Every piece is thoughtfully curated to bring out the boldness in you, because true elegance isn&apos;t about how much you spend — it&apos;s about how you carry yourself.
+              </p>
+              <p className="font-semibold text-lg md:text-2xl pt-2" style={{ color: siteConfig.colors.primary }}>
+                Bright. Bold. Beautiful. That&apos;s Vishti.
+              </p>
+            </div>
           </div>
         </div>
       </section>

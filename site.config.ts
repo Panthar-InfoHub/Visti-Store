@@ -7,7 +7,7 @@ export const siteConfig = {
   domain: "https://visti-store.vercel.app/",
   // Logo
   logo: {
-    path: "/image/visti-logo.png",
+    path: "/visti-image/logo.svg",
     alt: "Vishti Store Logo",
   },
 

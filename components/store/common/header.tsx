@@ -60,16 +60,15 @@ export function Header() {
         <div className="flex items-center justify-between gap-2 sm:gap-4 py-1 relative">
           {/* Logo - Left */}
           <Link href="/" className="flex items-center gap-1 shrink-0">
-            <div className="rounded-lg relative w-12 h-12 md:w-14 md:h-14">
+            <div className="relative h-12 w-32 sm:h-14 sm:w-36 md:h-16 md:w-40 lg:h-16 lg:w-44">
               <Image
                 src={siteConfig.logo.path}
                 alt={siteConfig.logo.alt}
                 fill
-                className="rounded-lg object-contain"
+                className="object-contain object-left"
                 priority
               />
             </div>
-            {/* <span className="text-xl font-semibold  sm:inline">{siteConfig.name}</span> */}
           </Link>
 
           {/* Desktop Navigation */}
@@ -117,7 +116,7 @@ export function Header() {
               <HeaderCartButton isMobile />
               <Button variant="ghost" size="icon" className="lg:hidden " asChild>
                 <Link href="/account">
-                  <User className="h-5 w-5" />
+                  <User className="h-16 w-16" />
                 </Link>
               </Button>
 
@@ -128,7 +127,7 @@ export function Header() {
                 <HeaderWishlistButton />
                 <Button variant="ghost" size="icon" className="" asChild>
                   <Link href="/account">
-                    <User className="h-5 w-5" />
+                    <User className="h-16 w-16" />
                   </Link>
                 </Button>
               </div>

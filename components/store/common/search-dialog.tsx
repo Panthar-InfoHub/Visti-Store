@@ -23,7 +23,12 @@ export function SearchDialog() {
   const [searchQuery, setSearchQuery] = useState("");
   const [results, setResults] = useState<SearchPreviewResult | null>(null);
   const [isLoading, setIsLoading] = useState(false);
+  const [mounted, setMounted] = useState(false);
   const router = useRouter();
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   // Debounced search with useCallback
   const debouncedSearch = useCallback(
@@ -85,6 +90,14 @@ export function SearchDialog() {
 
   const hasResults = results && (results.categories.length > 0 || results.products.length > 0);
   const showEmpty = searchQuery.trim().length >= 2 && !isLoading && results && !hasResults;
+
+  if (!mounted) {
+    return (
+      <Button variant="ghost" size="icon">
+        <Search className="h-5 w-5" />
+      </Button>
+    );
+  }
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
