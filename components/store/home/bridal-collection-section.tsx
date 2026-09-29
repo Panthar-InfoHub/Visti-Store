@@ -57,14 +57,14 @@ export function BridalCollectionSection() {
             </div>
 
             <div className="pt-4 flex flex-wrap items-center gap-4">
-              <Link
+              {/* <Link
                 href="/about"
                 className="inline-flex items-center gap-2 text-white px-8 py-3.5 text-sm uppercase font-bold transition-all duration-300 hover:opacity-90 rounded-md shadow-md"
                 style={{ backgroundColor: siteConfig.colors.primary }}
               >
                 <span>View Full Story</span>
                 <ArrowRight className="w-4 h-4" />
-              </Link>
+              </Link> */}
             </div>
           </div>
 
