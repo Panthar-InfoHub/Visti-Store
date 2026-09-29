@@ -2,7 +2,7 @@ import { getSiteConfig } from "@/actions/admin/site-config.actions";
 import { siteConfig } from "@/site.config";
 import { Suspense } from "react";
 
-export async function AnnouncementBar() {
+export function AnnouncementBar() {
   return (
     <Suspense fallback={null}>
       <BarContent />

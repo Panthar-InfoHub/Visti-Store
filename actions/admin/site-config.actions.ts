@@ -20,21 +20,34 @@ export async function getSiteConfig() {
           invoicePrefix: "INV",
         },
       });
-    } else if (config.freeShippingMinOrder === 500 || config.announcementText.includes("500")) {
-      // Auto-update legacy default threshold to 1299
-      config = await prisma.siteConfig.update({
-        where: { id: config.id },
-        data: {
-          freeShippingMinOrder: 1299,
-          announcementText: config.announcementText.replace("500", "1299"),
-        },
-      });
     }
 
     return { success: true, data: config };
   } catch (error) {
     console.error("Error fetching site config:", error);
-    return { success: false, error: "Failed to fetch site configuration" };
+    // Return fallback config when database is unreachable to prevent SSR hydration failure
+    return {
+      success: true,
+      data: {
+        id: "default",
+        shippingCharge: 50,
+        freeShippingMinOrder: 1299,
+        showAnnouncementBar: true,
+        announcementText: "Free shipping on orders above ₹1299!",
+        cgstRate: 9,
+        sgstRate: 9,
+        businessName: null,
+        businessAddress: null,
+        businessGstin: null,
+        businessPan: null,
+        businessCin: null,
+        businessPhone: null,
+        businessEmail: null,
+        invoicePrefix: "INV",
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+    };
   }
 }
 
