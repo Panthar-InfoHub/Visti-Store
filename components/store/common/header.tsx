@@ -42,10 +42,10 @@ const navigationLinks = [
     label: "Bulk Order",
     href: "/bulk-order",
   },
-  {
-    label: "About Us",
-    href: "/about",
-  },
+  // {
+  //   label: "About Us",
+  //   href: "/about",
+  // },
   {
     label: "Contact Us",
     href: "/contact",

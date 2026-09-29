@@ -3,6 +3,7 @@ import { Poppins } from "next/font/google";
 import { ReactLenis } from "@/components/shared/lenis";
 import { Toaster } from "@/components/ui/sonner";
 import { ScrollToTop } from "@/components/shared/scroll-to-top";
+import { ThemeProvider } from "@/components/providers/theme-provider";
 import { siteConfig } from "@/site.config";
 import "lenis/dist/lenis.css";
 import "./(store)/styless.css";
@@ -49,17 +50,23 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={` ${poppins.className} antialiased`} suppressHydrationWarning>
-      <ReactLenis root>
-        <body className="min-h-screen bg-background text-foreground" style={
+      <body
+        className="min-h-screen bg-background text-foreground"
+        style={
           {
             "--background": siteConfig.colors.bgColor,
           } as React.CSSProperties
-        } suppressHydrationWarning>
-          <ScrollToTop />
-          {children}
-          <Toaster />
-        </body>
-      </ReactLenis>
+        }
+        suppressHydrationWarning
+      >
+        <ThemeProvider forcedTheme="light" attribute="class" defaultTheme="light">
+          <ReactLenis root>
+            <ScrollToTop />
+            {children}
+            <Toaster />
+          </ReactLenis>
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
